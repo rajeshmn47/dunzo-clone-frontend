@@ -16,7 +16,7 @@ return(
     <div className='navbarcontainer'>
     <div className='navbar'>
     <div className='child'>
-<LocationOnIcon htmlColor='#00D290'/>Set Location <ExpandMoreOutlinedIcon htmlColor='#00D290'/>
+<LocationOnIcon htmlColor='#00D290'/>Set Location <ExpandMoreOutlinedIcon htmlColor='#00D290' onClick={()=>navigate('/set-location')}/>
 </div>
 <div className='child'>
 <ShoppingCartOutlinedIcon/>
