@@ -3,9 +3,9 @@ import { TextField } from '@material-ui/core';
 import { useState } from 'react';
 import axios from 'axios'
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
-
-
+import {Link, Navigate} from 'react-router-dom'
+import './setlocation.css'
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 
 class Setlocation extends Component {
     constructor(props) {
@@ -62,12 +62,13 @@ class Setlocation extends Component {
                 );
             }
         });
+    
     };
     
     render(){
         return(
-        <>  
-                            
+        <>  <div className='setlocation'>
+                  <h5 style={{marginBottom:'1vh'}}><KeyboardBackspaceIcon/>Add your Location</h5>          
                            <Autocomplete
                          
                                                 className='col-lg-9 col-md-8 col-sm-8 mr-0  text-left form-control-plaintext form-control-lg ml-2  text-muted font-weight-bold'
@@ -96,22 +97,7 @@ class Setlocation extends Component {
                                                 )}
                                             />
                                 
-                                    <button
-                                        type='button'
-                                        className='col-2 btn btn-lg'
-                                
-                                        style={{
-                                            height: '100%',
-                                            color: 'white',
-                                            backgroundColor: '#fc8019',
-                                            borderRadius: '0px',
-                                        }}
-                                    >
-                                        <h6 className='font-weight-bold'>
-                                            FIND FOOD
-                                        </h6>
-                                    </button>
-                    
+               </div>                     
                             
  </>
         )}

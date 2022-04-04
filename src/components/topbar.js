@@ -11,12 +11,14 @@ import { useNavigate } from 'react-router-dom';
 export const Topbar=()=>{
     const [user,setUser]=useState()
     const navigate=useNavigate()
+    const data = JSON.parse(localStorage.getItem('Coordinates'));
+    console.log(data)
 return(
     <>
     <div className='navbarcontainer'>
     <div className='navbar'>
-    <div className='child'>
-<LocationOnIcon htmlColor='#00D290'/>Set Location <ExpandMoreOutlinedIcon htmlColor='#00D290' onClick={()=>navigate('/set-location')}/>
+    <div className='child' onClick={()=>navigate('/set-location')}>
+<LocationOnIcon htmlColor='#00D290'/>{data?<p>{data.area},{data.place_name}</p>:'Set Location' }<ExpandMoreOutlinedIcon htmlColor='#00D290'/>
 </div>
 <div className='child'>
 <ShoppingCartOutlinedIcon/>
