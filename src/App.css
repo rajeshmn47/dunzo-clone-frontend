@@ -1,0 +1,27 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1vmax;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  background-color: #FFFFFF
+  
+}
+.child{
+  display: flex;
+  align-items: center;
+  width: 40%;
+  justify-content: space-evenly;
+}
+.search{
+  padding: 5vmax;
+  position: relative;
+}
+.navbarcontainer{
+  padding-bottom: 10vh;
+  margin-top: 5vh;
+  border-bottom: 1px solid #DDDDDD;
+}
