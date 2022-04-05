@@ -18,7 +18,7 @@ return(
     <div className='navbarcontainer'>
     <div className='navbar'>
     <div className='child' onClick={()=>navigate('/set-location')}>
-<LocationOnIcon htmlColor='#00D290'/>{data?<p>{data.area},{data.place_name}</p>:'Set Location' }<ExpandMoreOutlinedIcon htmlColor='#00D290'/>
+<LocationOnIcon htmlColor='#00D290'/>{data?<p>{data.area}</p>:'Set Location' }<ExpandMoreOutlinedIcon htmlColor='#00D290'/>
 </div>
 <div className='child'>
 <ShoppingCartOutlinedIcon/>
