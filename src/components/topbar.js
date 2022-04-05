@@ -22,7 +22,7 @@ return(
 </div>
 <div className='child'>
 <ShoppingCartOutlinedIcon/>
-{user?user.username:'Sign in'}
+{user?user.username:<h5 onClick={()=>navigate('/signin')}>Sign in</h5>}
 <MoreVertIcon/>
 </div>
 </div>
