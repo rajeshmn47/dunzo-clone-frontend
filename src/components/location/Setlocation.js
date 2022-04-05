@@ -68,7 +68,7 @@ class Setlocation extends Component {
     render(){
         return(
         <>  <div className='setlocation'>
-                  <h5 style={{marginBottom:'1vh'}}><KeyboardBackspaceIcon/>Add your Location</h5>          
+                  <h5 style={{marginBottom:'1vh',display:'flex',alignItems:'center'}}><KeyboardBackspaceIcon/>Add your Location</h5>          
                            <Autocomplete
                          
                                                 className='col-lg-9 col-md-8 col-sm-8 mr-0  text-left form-control-plaintext form-control-lg ml-2  text-muted font-weight-bold'
