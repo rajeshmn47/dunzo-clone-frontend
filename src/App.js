@@ -5,6 +5,7 @@ import Home from './components/home'
 import Signin from './components/signin'
 import Searc from './components/search/Tearch'
 import Setlocation from './components/location/Setlocation'
+import Profile from './components/user/profile'
 import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/search' element={<Searc/>} />
           <Route path='/set-location' element={<Setlocation/>} />
           <Route path='/signin' element={<Signin/>} />
+          <Route path='/profile' element={<Profile/>} />
         </Routes>
       </Router>
     </>
