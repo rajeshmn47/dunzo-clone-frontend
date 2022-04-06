@@ -1,9 +1,15 @@
 import { TextField,CircularProgress } from "@material-ui/core"
 import { Search } from "@material-ui/icons"
-import { useState } from "react"
+import { useState,useEffect } from "react"
+import axios from 'axios'
 
 export const Searc=()=>{
     const [loading,setLoading]=useState(false)
+
+useEffect(async()=>{
+    const data=await axios.get('localhost:9000/store/getallstores')
+    console.log(data)
+},[])
     return(
         <>
         <div className='search'>
@@ -14,6 +20,10 @@ export const Searc=()=>{
 <CircularProgress style={{color:'#00D290'}}/>
 </div>}
 </div>
+<div className="stores">
+rajewjjs
+</div>
+
         </>
     )
 }
