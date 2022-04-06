@@ -7,7 +7,7 @@ export const Searc=()=>{
     const [loading,setLoading]=useState(false)
 
 useEffect(async()=>{
-    const data=await axios.get('localhost:9000/store/getallstores')
+    const data=await axios.get('http://localhost:9000/store/getallstores')
     console.log(data)
 },[])
     return(
