@@ -1,0 +1,86 @@
+.categories{
+    display:block;
+    overflow:auto;
+    border-bottom: 2px solid #DDDDDD;
+    height: 10vh;
+overflow-x: scroll;
+box-sizing: border-box;
+white-space:nowrap;
+width: 100%;
+scroll-behavior: smooth;
+font-family: Gilroy,sans-serif;
+}
+.category{
+   width: auto;
+   height: 9.45vh;
+   display: inline-block;
+   outline: none;
+   border: none;
+   background-color: #FFFFFF;
+   color: rgb(135,140,155);
+   margin: 0vh 2vw;
+   text-transform:uppercase ;
+  
+   font-family: Gilroy,sans-serif;
+}
+.selected{
+    border-bottom: 3px solid rgb(0, 192, 139);
+}
+.categories::-webkit-scrollbar {
+    display: none;
+}
+.categoryheader{
+        font-weight: 600;
+        background-color: rgb(243, 243, 245);
+        box-shadow: rgb(231 232 235) 0px -1px 0px 0px inset;
+        text-transform: capitalize;
+        line-height: 20px;
+        padding: 12px 16px;
+        font-size: 18px;
+        font-family: Gilroy,sans-serif;
+}
+.products{
+    display: flex;
+    flex-direction: column;
+    padding:3vh 2vw;
+    
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5vh;
+}
+.add{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: rgb(0, 192, 139);
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 1vh 1vw;
+    width: 15vw;
+}
+.left{
+    display: flex;
+    align-items: flex-start;
+}
+
+.productdetails{
+    margin-bottom: 2vh;
+    margin-left: 3vw;
+}
+.productdetails h5{
+    font-family: sans-serif;
+margin-bottom: 2vh;
+font-weight: 600;
+font-size: 14px;
+}
+.productdetails h6{
+    font-family: sans-serif;
+    opacity:0.5;
+margin-bottom: 2vh;
+font-size: 14px;
+}
+
