@@ -4,10 +4,11 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { useState,useEffect } from 'react';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
-import {TextField} from '@material-ui/core'
+import {TextField,Badge} from '@material-ui/core'
 import { Search } from '@material-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux'
+
 
 export const Topbar=()=>{
     const { cartItems } = useSelector((state) => state.cart);
@@ -23,7 +24,9 @@ return(
 <LocationOnIcon htmlColor='#00D290'/>{data?<p>{data.area}</p>:'Set Location' }<ExpandMoreOutlinedIcon htmlColor='#00D290'/>
 </div>
 <div className='child'>
+<Badge badgeContent={cartItems.reduce((a,b)=>a+b.price+b.quantity+0)} color="error">
 <ShoppingCartOutlinedIcon/>
+</Badge>
 {user?user.username:<h5 onClick={()=>navigate('/signin')}>Sign in</h5>}
 <MoreVertIcon/>
 </div>
