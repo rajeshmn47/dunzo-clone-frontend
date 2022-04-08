@@ -12,6 +12,7 @@ import {useSelector,useDispatch} from 'react-redux'
 
 export const Topbar=()=>{
     const { cartItems } = useSelector((state) => state.cart);
+    console.log(cartItems)
     const [user,setUser]=useState()
     const navigate=useNavigate()
     const data = JSON.parse(localStorage.getItem('Coordinates'));
@@ -24,7 +25,7 @@ return(
 <LocationOnIcon htmlColor='#00D290'/>{data?<p>{data.area}</p>:'Set Location' }<ExpandMoreOutlinedIcon htmlColor='#00D290'/>
 </div>
 <div className='child'>
-<Badge badgeContent={cartItems.reduce((a,b)=>a+b.price+b.quantity+0)} color="error">
+<Badge badgeContent={cartItems?.reduce((a,b)=>a+b.price+b.quantity,0)} color="error">
 <ShoppingCartOutlinedIcon/>
 </Badge>
 {user?user.username:<h5 onClick={()=>navigate('/signin')}>Sign in</h5>}
