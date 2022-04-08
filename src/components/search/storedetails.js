@@ -8,20 +8,19 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Product from'./product/Product'
 import Minicart from './minicart'
+import {getstoredetails} from '../../actions/storeAction'
+import {useSelector} from 'react-redux'
 
 export const Storedetails=()=>{
-    const [store,setStore]=useState()
+    const { storedata } = useSelector((state) => state.store);
+    const store=storedata
     const [category,setCategory]=useState()
     const[products,setProducts]=useState()
     const id=useParams()
+    
     console.log(id)
     useEffect(()=>{
-       async function getstoredetails(){
-        const data=await axios.get(`http://localhost:9000/store/getstoredetails/${id.id}`)
-        console.log(data?.data.stores)
-        setStore(data?.data.stores)
-       }
-       getstoredetails() 
+       getstoredetails(id.id) 
     },[id.id])
     useEffect(()=>{
 async function getproducts(){
@@ -45,7 +44,7 @@ const addtocart=()=>{
         </div>
         <div style={{padding:'2vw',borderBottom:'1px solid #CCCCCC',fontFamily:'Gilroy,sans-serif'}}>
 <h3 style={{fontFamily:'Gilroy,sans-serif'}}>{store?.title}</h3>
-<div style={{display:'flex',alignItems:'center',width:'50%',justifyContent:'space-between',marginTop:'2vh'}}>
+<div style={{display:'flex',alignItems:'center',width:'auto',justifyContent:'space-between',marginTop:'2vh',whiteSpace:'nowrap'}}>
 <h5 style={{ color: 'rgb(135,140,155)',textTransform:'capitalize'}}>{store?.location}</h5>
 <h5 style={{ color: 'rgb(135,140,155)'}}>31 mins</h5>
 <h5 style={{ color: 'blue'}}>Free Delivery</h5>

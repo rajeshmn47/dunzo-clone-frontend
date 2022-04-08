@@ -74,6 +74,7 @@ font-family: Gilroy,sans-serif;
 .productdetails{
     margin-bottom: 2vh;
     margin-left: 3vw;
+    width: 100%;
 }
 .productdetails h5{
     font-family: sans-serif;
@@ -106,4 +107,28 @@ font-family: sans-serif;
     border-radius: 15px;
     font-weight: 700;
     font-family: sans-serif;
+}
+
+.minicart{
+    padding: 2vh 5vw;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+font-size: 12px;
+font-family: sans-serif;
+box-shadow: 5px 10px 8px 10px #DDDDDD;
+align-items:center;
+}
+
+.cartbtn{
+    outline: none;
+    border: none;
+    background-color:rgb(0, 192, 139);
+    color: #FFFFFF;
+    padding: 2vmax;
+    border-radius: 20px;
+    font-weight: 700;
 }
