@@ -9,7 +9,8 @@ import {
   
 // REMOVE FROM CART
 export const  getstoredetails= (id) => async (dispatch, getState) => {
-    const data=await axios.get(`http://localhost:9000/store/getstoredetails/${id.id}`)
+    const data=await axios.get(`http://localhost:9000/store/getstoredetails/${id}`)
+    console.log(data)
     dispatch({
       type: GET_STORE_DETAILS,
       payload: data?.data.stores,

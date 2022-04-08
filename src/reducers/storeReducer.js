@@ -10,7 +10,7 @@ import {
         case GET_STORE_DETAILS:
             return {
               ...state,
-              store: action.payload
+              storedata: action.payload
             };
             default:
             return state;

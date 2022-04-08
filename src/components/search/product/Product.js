@@ -2,17 +2,28 @@ import {useDispatch,useSelector} from 'react-redux'
 import { useState,useEffect } from 'react';
 import { addItemsToCart } from '../../../actions/cartAction';
 
-export const Product=(propss)=>{
+export const Product=({propss,open,setOpen})=>{
+    const { storedata } = useSelector((state) => state.store);
     const { cartItems } = useSelector((state) => state.cart);
     console.log(cartItems)
-    const item=cartItems.find((c)=>c.product===propss.propss._id)
+    const storeinfo=localStorage.getItem("storeinfo")
+    ? JSON.parse(localStorage.getItem("storeinfo")):false
+  
+  
+    const item=cartItems.find((c)=>c.product===propss._id)
     const dispatch = useDispatch();
     const[qty,setqty]=useState(0)
     console.log(propss)
-    const p=propss.propss
+    const p=propss
 const handleAdd=(id)=>{
+    if(!storeinfo||storeinfo._id===storedata._id){
+    localStorage.setItem("storeinfo", JSON.stringify(storedata));
     setqty(qty + 1);
     dispatch(addItemsToCart(id,qty));
+    }
+    else{
+setOpen(true)
+    }
 }
       const handleInc = (id) => {
         setqty(qty + 1);
@@ -21,7 +32,9 @@ const handleAdd=(id)=>{
     
       const handleDec = (id) => {
         setqty(qty - 1);
+        if((item.quantity-1)>-1){
         dispatch(addItemsToCart(id,item.quantity-1));
+        }
       };
     return(
         <>
@@ -45,6 +58,7 @@ const handleAdd=(id)=>{
         <button className='smalladd' onClick={()=>handleDec(p._id)}> - </button>
     </div>}
     </div>
+
         </>
     )
 }

@@ -9,10 +9,15 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import Product from'./product/Product'
 import Minicart from './minicart'
 import {getstoredetails} from '../../actions/storeAction'
-import {useSelector} from 'react-redux'
+import {useSelector,useDispatch} from 'react-redux'
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
 
 export const Storedetails=()=>{
+    const dispatch=useDispatch()
     const { storedata } = useSelector((state) => state.store);
+    const[open,setOpen]=useState(false)
+    console.log(storedata)
     const store=storedata
     const [category,setCategory]=useState()
     const[products,setProducts]=useState()
@@ -20,7 +25,7 @@ export const Storedetails=()=>{
     
     console.log(id)
     useEffect(()=>{
-       getstoredetails(id.id) 
+       dispatch(getstoredetails(id.id)) 
     },[id.id])
     useEffect(()=>{
 async function getproducts(){
@@ -35,6 +40,9 @@ getproducts()
 const addtocart=()=>{
 
 }
+const toggleDrawer = (open) => (event) => {
+    setOpen(false)
+  };
     return(
         <>
   <div style={{display:'flex',alignItems:'center',padding:'2vw',borderBottom:'1px solid #CCCCCC'}}>
@@ -51,7 +59,7 @@ const addtocart=()=>{
 </div>
 </div>
 <div className='categories'>
-{store?.category.map((s)=><>
+{store?.category?.map((s)=><>
 <button className={category===s.name?'category selected':'category'} onClick={()=>setCategory(s.name)}>{s.name}</button></>)}
 </div>
 <div className='categoryheader'>
@@ -59,9 +67,13 @@ const addtocart=()=>{
 </div>
 <div className='products'>
     {products?products?.map((p)=>
-<Product propss={p}/>):null}
+<Product propss={p} open={open} setOpen={setOpen}/>):null}
     </div>
 <Minicart/>
+<Drawer style={{height:'20vh'}} anchor='bottom' open={open} onClose={toggleDrawer(false)}>
+<Button style={{backgroundColor:'#FFFFFF'}}>Cancel</Button>
+<Button style={{backgroundColor:'rgb(0, 192, 139)'}}>Clear cart</Button>
+    </Drawer>
         </>
     )
 }
