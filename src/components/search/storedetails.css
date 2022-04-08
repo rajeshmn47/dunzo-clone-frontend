@@ -51,6 +51,7 @@ font-family: Gilroy,sans-serif;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 5vh;
+    
 }
 .add{
     border: none;
@@ -61,6 +62,9 @@ font-family: Gilroy,sans-serif;
     border: 1px solid #DDDDDD;
     padding: 1vh 1vw;
     width: 15vw;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0vw 1vw;
 }
 .left{
     display: flex;
@@ -83,4 +87,23 @@ font-size: 14px;
 margin-bottom: 2vh;
 font-size: 14px;
 }
-
+.smalladd{
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+color: rgb(0, 192, 139);
+font-size: 18px;
+font-weight: 700;
+font-family: sans-serif;
+}
+.added{
+    display: flex;
+    width: 15vw;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(231, 232, 235);
+    padding: 1vh 1vw;
+    border-radius: 15px;
+    font-weight: 700;
+    font-family: sans-serif;
+}

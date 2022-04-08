@@ -7,8 +7,10 @@ import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 import {TextField} from '@material-ui/core'
 import { Search } from '@material-ui/icons';
 import { useNavigate } from 'react-router-dom';
+import {useSelector,useDispatch} from 'react-redux'
 
 export const Topbar=()=>{
+    const { cartItems } = useSelector((state) => state.cart);
     const [user,setUser]=useState()
     const navigate=useNavigate()
     const data = JSON.parse(localStorage.getItem('Coordinates'));

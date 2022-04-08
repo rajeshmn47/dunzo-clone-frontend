@@ -3,6 +3,11 @@ import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import './storedetails.css'
+import addItemsToCart from '../../actions/cartAction'
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+import Product from'./product/Product'
+import Minicart from './minicart'
 
 export const Storedetails=()=>{
     const [store,setStore]=useState()
@@ -17,7 +22,7 @@ export const Storedetails=()=>{
         setStore(data?.data.stores)
        }
        getstoredetails() 
-    },[id])
+    },[id.id])
     useEffect(()=>{
 async function getproducts(){
     const data=await axios.get(`http://localhost:9000/store/getproducts/?category=${category}`)
@@ -28,7 +33,9 @@ if(category){
 getproducts()
 }
     },[category])
+const addtocart=()=>{
 
+}
     return(
         <>
   <div style={{display:'flex',alignItems:'center',padding:'2vw',borderBottom:'1px solid #CCCCCC'}}>
@@ -53,22 +60,9 @@ getproducts()
 </div>
 <div className='products'>
     {products?products?.map((p)=>
-    <div className='product'>
-        <div className='left'>
-            <div>
-        <img src={p.image} alt='' width='60'/>
-        </div>
-        <div className='productdetails'>
-    <h5>{p.name}</h5>
-    <h6>{p.price} Rs</h6>
-    <h5>{p.quantity} Kg</h5>
+<Product propss={p}/>):null}
     </div>
-    </div>
-    <div>
-        <button className='add'>ADD</button>
-        </div>
-    </div>):null}
-    </div>
+<Minicart/>
         </>
     )
 }
