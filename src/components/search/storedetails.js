@@ -70,9 +70,11 @@ const toggleDrawer = (open) => (event) => {
 <Product propss={p} open={open} setOpen={setOpen}/>):null}
     </div>
 <Minicart/>
-<Drawer style={{height:'20vh'}} anchor='bottom' open={open} onClose={toggleDrawer(false)}>
-<Button style={{backgroundColor:'#FFFFFF'}}>Cancel</Button>
-<Button style={{backgroundColor:'rgb(0, 192, 139)'}}>Clear cart</Button>
+<Drawer style={{height:'40vh'}} anchor='bottom' open={open} onClose={toggleDrawer(false)}>
+    <div className='drawerbtns'>
+<Button style={{backgroundColor:'#FFFFFF',width:'50vw',borderColor:'rgb(0, 192, 139)',borderRadius:'20px'}}>Cancel</Button>
+<Button style={{backgroundColor:'rgb(0, 192, 139)',width:'50vw',color:'#FFFFFF'}}>Clear cart</Button>
+</div>
     </Drawer>
         </>
     )

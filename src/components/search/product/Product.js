@@ -8,9 +8,9 @@ export const Product=({propss,open,setOpen})=>{
     console.log(cartItems)
     const storeinfo=localStorage.getItem("storeinfo")
     ? JSON.parse(localStorage.getItem("storeinfo")):false
+  console.log(storeinfo,storedata)
   
-  
-    const item=cartItems.find((c)=>c.product===propss._id)
+    const item=cartItems.find((c)=>c.product===propss._id&&storeinfo._id===storedata._id)
     const dispatch = useDispatch();
     const[qty,setqty]=useState(0)
     console.log(propss)

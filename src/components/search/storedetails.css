@@ -132,3 +132,8 @@ align-items:center;
     border-radius: 20px;
     font-weight: 700;
 }
+
+.drawerbtns{
+    display: flex;
+    padding:1vmax;
+}
