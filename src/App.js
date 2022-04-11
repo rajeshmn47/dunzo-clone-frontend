@@ -9,8 +9,22 @@ import Storedetails from './components/search/storedetails'
 import Profile from './components/user/profile'
 import Otpauth from './components/authentication/Otpauthentication'
 import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import {auth} from './firebase'
+import {useState,useEffect} from 'react'
+
 
 function App() {
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+    if(authUser){
+      console.log(authUser,'ok good bro')
+    } else {
+      console.log('sorry bro')
+    }
+  })
+  },[])
+  
   return (
     <>
      <Router>
