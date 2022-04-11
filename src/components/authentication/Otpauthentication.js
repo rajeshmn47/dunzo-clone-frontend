@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { firebase } from '../../firebase';
-import {getAuth,onAuthStateChanged} from 'firebase/auth'
+import { getAuth, signInWithPhoneNumber,RecaptchaVerifier  } from "firebase/auth";
+
   
-const Login = () => {
+const Otpauth = () => {
     // Inputs
     const [mynumber, setnumber] = useState("");
+	const auth=getAuth()
     const [otp, setotp] = useState('');
     const [show, setshow] = useState(false);
     const [final, setfinal] = useState('');
+
+	useEffect(()=>{
+
+	window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
+		'size': 'invisible',
+		'callback': (response) => {
+		  // reCAPTCHA solved, allow signInWithPhoneNumber.
+		  console.log(response)
+		}
+	  }, auth);
+	},[])
   
     // Sent OTP
     const signin = () => {
   
         if (mynumber === "" || mynumber.length < 10) return;
   
-        let verify = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-        auth.signInWithPhoneNumber(mynumber, verify).then((result) => {
+        const verify = window.recaptchaVerifier
+        signInWithPhoneNumber(auth,mynumber, verify).then((result) => {
             setfinal(result);
             alert("code sent")
             setshow(true);
@@ -32,6 +45,7 @@ const Login = () => {
             return;
         final.confirm(otp).then((result) => {
             // success
+			console.log(result)
         }).catch((err) => {
             alert("Wrong code");
         })
@@ -52,11 +66,11 @@ const Login = () => {
                     <input type="text" placeholder={"Enter your OTP"}
                         onChange={(e) => { setotp(e.target.value) }}></input>
                     <br /><br />
-                    <button onClick={ValidateOtp}>Verify</button>
+                    <button id='sign-in-button' onClick={ValidateOtp}>Verify</button>
                 </div>
             </center>
         </div>
     );
 }
   
-export default Login;
+export default Otpauth;
