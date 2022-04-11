@@ -7,6 +7,7 @@ import Searc from './components/search/Tearch'
 import Setlocation from './components/location/Setlocation'
 import Storedetails from './components/search/storedetails'
 import Profile from './components/user/profile'
+import Otpauth from './components/authentication/Otpauthentication'
 import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/signin' element={<Signin/>} />
           <Route path='/profile' element={<Profile/>} />
           <Route path='/store/:id' element={<Storedetails/>} />
+          <Route path='/auth' element={<Otpauth/>} /> 
         </Routes>
       </Router>
     </>

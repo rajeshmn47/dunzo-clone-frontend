@@ -12,9 +12,11 @@ import {getstoredetails} from '../../actions/storeAction'
 import {useSelector,useDispatch} from 'react-redux'
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
+import { useNavigate } from 'react-router-dom';
 
 export const Storedetails=()=>{
     const dispatch=useDispatch()
+    const [user,setUser]=useState()
     const { storedata } = useSelector((state) => state.store);
     const[open,setOpen]=useState(false)
     console.log(storedata)
@@ -45,11 +47,16 @@ const toggleDrawer = (open) => (event) => {
   };
     return(
         <>
-  <div style={{display:'flex',alignItems:'center',padding:'2vw',borderBottom:'1px solid #CCCCCC'}}>
+  <div style={{display:'flex',alignItems:'center',padding:'1vmax',justifyContent:'space-between',borderBottom:'1px solid #CCCCCC'}}>     
+  <div style={{display:'flex',alignItems:'center'}}>
         <KeyboardBackspaceIcon/>
         <img src='https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-7b2b540792556466133aea6e7c6ae513.png' 
         alt='' height='14' width='61'/>
         </div>
+    <div >
+{user?'profile':'Login'}
+    </div>
+    </div>
         <div style={{padding:'2vw',borderBottom:'1px solid #CCCCCC',fontFamily:'Gilroy,sans-serif'}}>
 <h3 style={{fontFamily:'Gilroy,sans-serif'}}>{store?.title}</h3>
 <div style={{display:'flex',alignItems:'center',width:'auto',justifyContent:'space-between',marginTop:'2vh',whiteSpace:'nowrap'}}>
