@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { firebase, auth } from '../../firebase';
+import { firebase } from '../../firebase';
+import {getAuth,onAuthStateChanged} from 'firebase/auth'
   
 const Login = () => {
     // Inputs
