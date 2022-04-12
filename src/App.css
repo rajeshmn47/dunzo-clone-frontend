@@ -16,6 +16,7 @@ body{
   padding: 1vmax;
   box-sizing: border-box;
   position: fixed;
+  margin-top: 1vh;
   top: 0;
   background-color: #FFFFFF;
   z-index: 22222222222222222222222222;
@@ -24,7 +25,7 @@ body{
   display: flex;
   align-items: center;
   width: auto;
-  min-width: 30%;
+  min-width: 35%;
   justify-content: space-evenly;
 }
 .search{
@@ -33,8 +34,7 @@ body{
 }
 .navbarcontainer{
   padding-bottom: 2vh;
-  margin-top: 5vh;
-  
+  margin-top:5vh
 }
 .imagebanner{
   padding: 5vmax;

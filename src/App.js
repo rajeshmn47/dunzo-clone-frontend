@@ -5,6 +5,7 @@ import Home from './components/home'
 import Signin from './components/signin'
 import Searc from './components/search/Tearch'
 import Setlocation from './components/location/Setlocation'
+import Cart from './components/cart/Cart'
 import Storedetails from './components/search/storedetails'
 import Profile from './components/user/profile'
 import Otpauth from './components/authentication/Otpauthentication'
@@ -35,7 +36,8 @@ function App() {
           <Route path='/signin' element={<Signin/>} />
           <Route path='/profile' element={<Profile/>} />
           <Route path='/store/:id' element={<Storedetails/>} />
-          <Route path='/auth' element={<Otpauth/>} /> 
+          <Route path='/auth' element={<Otpauth/>} />
+          <Route path='/cart' element={<Cart/>} /> 
         </Routes>
       </Router>
     </>
