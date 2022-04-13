@@ -6,35 +6,36 @@ import ReactMapGL, {
 } from 'react-map-gl';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
-import { Room, Star, StarBorder } from "@material-ui/icons";
+import {Room} from '@material-ui/icons'
 
 
-const MAPBOX_TOKEN ='pk.eyJ1IjoicmFqZXNobW40NyIsImEiOiJjbDF4OXByczYwMHFqM2NtbTNkZG9rOGUyIn0.Sa9ZnUH-YOdekFPU80Cuqg'
 
-
+const MAPBOX_TOKEN =
+    'pk.eyJ1IjoiZmFoZHNoYWlraCIsImEiOiJja2gzYzB3a3YwaXlsMnJvaWJ3ZDdiYzBpIn0.EC5-vAFFL-32D0ZCkCkQFg';
+console.log(MAPBOX_TOKEN)
 const Tap = () => {
     const [customerCoords, setCustomerCoords] = useState({});
     const [placeName, setPlaceName] = useState('');
-    const data =localStorage.getItem('Coordinates')?JSON.parse(localStorage.getItem('Coordinates')):null
+    const data = JSON.parse(localStorage.getItem('Coordinates')); // Area Search Coordinates
 
     const [viewPort, setViewPort] = useState({
         width: 'inherit',
         height: 'inherit',
-        latitude: data?.lat, // 18.634363666666665  initially showing  Area Search Coordinates
-        longitude: data?.long, // 73.78761533333333
+        latitude: data.lat, // 18.634363666666665  initially showing  Area Search Coordinates
+        longitude: data.long, // 73.78761533333333
         zoom: 10,
     });
 
     const geolocateStyle = {
         position: 'absolute',
-        right: -3,
-        bottom: 30,
+        right: 30,
+        bottom: 100,
         margin: 10,
     };
 
     const navStyle = {
         position: 'absolute',
-        right: -3,
+        right: 60,
         bottom: 70,
         margin: 10,
     };
@@ -85,7 +86,7 @@ const Tap = () => {
 
     return (
         <>
-    <div style={{width:'100vw',height:'100vh'}}>
+        <div style={{height:'100vh',width:'100vw'}}>
             <ReactMapGL
                 {...viewPort}
                 mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -95,14 +96,23 @@ const Tap = () => {
                 // mapStyle='mapbox://styles/fahdshaikh/ckhed9kw802un1arxojsobt0m'
                 mapStyle='mapbox://styles/mapbox/light-v10'
             >
-                {data&&<Marker
-                    key={data.lat}
-                    latitude={data.lat}
-                    longitude={data.long}
-                >
-                    <Room />
-                    
-                </Marker>}
+        
+                <Marker
+              latitude={data.lat}
+              longitude={data.long}
+              offsetLeft={-3.5 * viewPort.zoom}
+              offsetTop={-7 * viewPort.zoom}
+            >
+              <Room
+                style={{
+                  fontSize: 7 * viewPort.zoom,
+                  color: "tomato",
+                  cursor: "pointer",
+                }}
+              
+              />
+                {data.area}
+            </Marker>
                 <GeolocateControl
                     style={geolocateStyle}
                     positionOptions={{ enableHighAccuracy: true }}
@@ -141,11 +151,21 @@ const Tap = () => {
                     value={placeName}
                 />
             </div>
+            
         </>
     );
 };
 
 export default Tap;
+
+// https://api.mapbox.com/directions/v5/mapbox/driving/73.787679,18.633725;77.620895,12.946148?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiZmFoZHNoYWlraCIsImEiOiJja2gzYzB3a3YwaXlsMnJvaWJ3ZDdiYzBpIn0.EC5-vAFFL-32D0ZCkCkQFg
+
+// long:73.787679,18.633725;77.620895,12.946148
+// lat:18.633725
+
+// 0:77.620895
+// 1:12.946148
+
 
 // https://api.mapbox.com/directions/v5/mapbox/driving/73.787679,18.633725;77.620895,12.946148?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiZmFoZHNoYWlraCIsImEiOiJja2gzYzB3a3YwaXlsMnJvaWJ3ZDdiYzBpIn0.EC5-vAFFL-32D0ZCkCkQFg
 
