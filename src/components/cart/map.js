@@ -15,13 +15,13 @@ const MAPBOX_TOKEN ='pk.eyJ1IjoicmFqZXNobW40NyIsImEiOiJjbDF4OXByczYwMHFqM2NtbTNk
 const Tap = () => {
     const [customerCoords, setCustomerCoords] = useState({});
     const [placeName, setPlaceName] = useState('');
-    const data = JSON.parse(localStorage.getItem('Coordinates')); // Area Search Coordinates
+    const data =localStorage.getItem('Coordinates')?JSON.parse(localStorage.getItem('Coordinates')):null
 
     const [viewPort, setViewPort] = useState({
         width: 'inherit',
         height: 'inherit',
-        latitude: data.lat, // 18.634363666666665  initially showing  Area Search Coordinates
-        longitude: data.long, // 73.78761533333333
+        latitude: data?.lat, // 18.634363666666665  initially showing  Area Search Coordinates
+        longitude: data?.long, // 73.78761533333333
         zoom: 10,
     });
 
@@ -95,14 +95,14 @@ const Tap = () => {
                 // mapStyle='mapbox://styles/fahdshaikh/ckhed9kw802un1arxojsobt0m'
                 mapStyle='mapbox://styles/mapbox/light-v10'
             >
-                <Marker
+                {data&&<Marker
                     key={data.lat}
                     latitude={data.lat}
                     longitude={data.long}
                 >
                     <Room />
                     
-                </Marker>
+                </Marker>}
                 <GeolocateControl
                     style={geolocateStyle}
                     positionOptions={{ enableHighAccuracy: true }}
