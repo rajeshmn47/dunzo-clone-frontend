@@ -17,6 +17,7 @@
 border-radius: 20px;
 font-weight: 600;
 box-sizing: border-box;
+text-transform: capitalize;
 }
 
 .cartitems{
@@ -44,7 +45,7 @@ box-sizing: border-box;
 .addmore{
     outline: none;
     border: none;
-    color: #026848;
+    color: #26b98b;
     background-color: #FFFFFF;
 }
 
@@ -62,6 +63,37 @@ box-sizing: border-box;
 }
 
 .f{
-background-color:#364881;
-height: 20vh;
+background-color:#E7E8EB;
+height: 10vh;
+}
+
+.addadr{
+    padding:1vmax;
+}
+
+.address{
+    padding:1vh 2vw;
+    display:flex;
+    flex-direction: column;
+    width:100vw;
+    align-items: flex-start;
+}
+.searchaddress{
+    display:flex;
+    justify-content: center;
+    position:relative;
+    margin-top:4vh;
+}
+
+.mylocationbtn{
+    background-color:#FFFFFF;
+    outline:none;
+    border:none;
+    display:flex;
+    align-items: center;
+}
+
+.map{
+    width:100vw;
+    height:100vh;
 }

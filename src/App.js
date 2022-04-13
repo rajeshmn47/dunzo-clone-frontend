@@ -6,12 +6,14 @@ import Signin from './components/signin'
 import Searc from './components/search/Tearch'
 import Setlocation from './components/location/Setlocation'
 import Cart from './components/cart/Cart'
+import Address from './components/cart/address'
 import Storedetails from './components/search/storedetails'
 import Profile from './components/user/profile'
 import Otpauth from './components/authentication/Otpauthentication'
 import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import {auth} from './firebase'
 import {useState,useEffect} from 'react'
+import Tap from './components/cart/map'
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
           <Route path='/store/:id' element={<Storedetails/>} />
           <Route path='/auth' element={<Otpauth/>} />
           <Route path='/cart' element={<Cart/>} /> 
+          <Route path='/addadress' element={<Address/>} /> 
+          <Route path='/map' element={<Tap/>}/>
         </Routes>
       </Router>
     </>

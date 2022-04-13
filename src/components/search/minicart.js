@@ -1,8 +1,9 @@
 import {useSelector} from 'react-redux'
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import { useNavigate } from 'react-router-dom';
 
 export const Minicart=()=>{
-
+const navigate=useNavigate()
     const { cartItems } = useSelector((state) => state.cart);
     return(
         <>
@@ -13,7 +14,7 @@ export const Minicart=()=>{
 <li style={{color:'rgb(0, 192, 139)'}}>₹{cartItems&&cartItems?.reduce((a,c)=>a + c.price * c.quantity,0)}</li>
 </div>
 <div>
-    <button className='cartbtn'>View Cart</button>
+    <button className='cartbtn' onClick={()=>navigate('/cart')}>View Cart</button>
     </div>
     </div>
         </>

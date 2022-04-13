@@ -25,7 +25,7 @@ return(
 <LocationOnIcon htmlColor='#00D290'/>{data?<p>{data.area}</p>:'Set Location' }<ExpandMoreOutlinedIcon htmlColor='#00D290'/>
 </div>
 <div className='child'>
-<Badge badgeContent={cartItems?.reduce((a,b)=>a+b.quantity,0)} color="error">
+<Badge badgeContent={cartItems?.reduce((a,b)=>a+b.quantity,0)} color="error" onClick={()=>navigate('/cart')}>
 <ShoppingCartOutlinedIcon/>
 </Badge>
 {user?user.username:<h5 onClick={()=>navigate('/signin')}>Sign in</h5>}
