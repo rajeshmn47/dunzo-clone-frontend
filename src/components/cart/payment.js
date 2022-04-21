@@ -57,9 +57,9 @@ const WarningText = styled.p`
 
 function Payment() {
     const navigate = useNavigate();
-    const state = useSelector((state) => state);
-    let Total = state.cart.reduce(
-        (acc, item) => acc + Number(item.qty) * Number(item.price),
+    const { cartItems } = useSelector((state) => state.cart);
+    let Total = cartItems.reduce(
+        (acc, item) => acc + Number(item.quantity) * Number(item.price),
         50,
     );
 
@@ -67,11 +67,12 @@ function Payment() {
         // console.log(Total);
         e.preventDefault();
 
-        const API_URL = `http://127.0.0.1:8000/images/api/razor/`;
+        const API_URL = `http://127.0.0.1:9000/payment/`;
         const orderUrl = `${API_URL}order/${Total}`;
         const response = await Axios.get(orderUrl);
         const { data } = response;
-
+        console.log('rajesh')
+        console.log(response)
         const options = {
             key: 'rzp_test_RasK5It8i6ASFZ',
             name: 'RazorPay',

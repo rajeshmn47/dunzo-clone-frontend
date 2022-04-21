@@ -33,7 +33,7 @@ body{
 }
 .navbarcontainer{
   padding-bottom: 2vh;
-  margin-top:5vh
+  margin-top:5vh;
 }
 .imagebanner{
   padding: 5vmax;
@@ -69,10 +69,7 @@ justify-content: center;
 flex-direction: column;
 font-size: 14px;
 }
-img {
- 
-  object-fit: contain;
-}
+
 .stores{
   display: flex;
   overflow: auto;
