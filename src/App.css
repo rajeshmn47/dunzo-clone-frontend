@@ -16,7 +16,6 @@ body{
   padding: 1vmax;
   box-sizing: border-box;
   position: fixed;
-  margin-top: 1vh;
   top: 0;
   background-color: #FFFFFF;
   z-index: 22222222222222222222222222;
@@ -62,7 +61,7 @@ box-shadow: rgb(0 0 0 / 6%) 0px 4px 7px;
 border: 2px solid #DDDDDD;
 width: 20vw;
 height: 20vh;
-margin: 1vh 1.5vw;
+margin: 1vh 1vw;
 display: flex;
 align-items: center;
 border-radius: 2px;

@@ -14,6 +14,7 @@ import { Routes, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import {auth} from './firebase'
 import {useState,useEffect} from 'react'
 import Tap from './components/cart/map'
+import AddDetails from './components/cart/adddetails'
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='/cart' element={<Cart/>} /> 
           <Route path='/addadress' element={<Address/>} /> 
           <Route path='/map' element={<Tap/>}/>
+          <Route path='/adddetails' element={<AddDetails/>}/>
         </Routes>
       </Router>
     </>

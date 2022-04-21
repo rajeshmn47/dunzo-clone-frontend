@@ -23,7 +23,7 @@ class Setlocation extends Component {
             url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${e.target.value}.json`,
             params: {
                 access_token:
-                    'pk.eyJ1IjoicmFqZXNobW40NyIsImEiOiJja3p5Y3BpYWswNGsyMm5wY25panAzYWp4In0.c9qSA5OqiBYo6sKGWHlxgw',
+                    'pk.eyJ1IjoicmFqZXNobW40NyIsImEiOiJjbDF4OXByczYwMHFqM2NtbTNkZG9rOGUyIn0.Sa9ZnUH-YOdekFPU80Cuqg'
             },
         })
             .then((res) => {
