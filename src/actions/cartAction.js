@@ -34,6 +34,14 @@ import {
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
   };
   
+  export const deletecart = (id) => async (dispatch, getState) => {
+    dispatch({
+      type: DELETE_CART,
+    });
+  
+    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+  };
+  
   // SAVE SHIPPING INFO
   export const saveShippingInfo = (data) => async (dispatch) => {
     dispatch({

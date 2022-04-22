@@ -31,7 +31,7 @@ console.log(addressinfo,dat,'raz')
     <div>
 <div style={{display:'flex',alignItems:'center',padding:'1vmax',justifyContent:'space-between',}}>     
   <div style={{display:'flex',alignItems:'center'}}>
-        <KeyboardBackspaceIcon/>
+        <KeyboardBackspaceIcon onClick={()=>navigate('/')}/>
       <h5 style={{marginLeft:'1vw'}}>Confirm Order</h5>
         </div>
     <div >
@@ -75,7 +75,6 @@ console.log(addressinfo,dat,'raz')
          dat?.place_name?.slice(0,46):dat?.place_name}...</h5>
         <KeyboardArrowDownIcon htmlColor='#00B37A'/>
  </div>
-<button className='paybtn'>Pay ₹{total}</button>
 <Payment/>
 </>}</div>
 </>

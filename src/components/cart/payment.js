@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Axios from 'axios';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 // import Confirmation from "./Confirmation";
 import { useNavigate } from 'react-router-dom';
+import { deletecart } from '../../actions/cartAction';
 
 const Wrapper = styled.div`
     font-family: system-ui !important;
@@ -56,6 +57,7 @@ const WarningText = styled.p`
 `;
 
 function Payment() {
+    const dispatch=useDispatch()
     const navigate = useNavigate();
     const { cartItems } = useSelector((state) => state.cart);
     let Total = cartItems.reduce(
@@ -153,6 +155,7 @@ totalPrice:Total,
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
+                dispatch(deletecart())
                 navigate('/Confirmation');
             })
             .catch(function (error) {
@@ -171,7 +174,7 @@ totalPrice:Total,
                                     onClick={handlePayment}
                                     // onClick={handleData}
                                 >
-                                   
+                                Pay ₹{Total} 
                                 </button>
                 
             </>
