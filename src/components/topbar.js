@@ -12,7 +12,8 @@ import {useSelector,useDispatch} from 'react-redux'
 
 export const Topbar=()=>{
     const { cartItems } = useSelector((state) => state.cart);
-    const { user } = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user);
+    console.log(user)
     console.log(cartItems)
     const navigate=useNavigate()
     const data = JSON.parse(localStorage.getItem('Coordinates'));
