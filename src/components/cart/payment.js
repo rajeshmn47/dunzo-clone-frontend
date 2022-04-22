@@ -103,38 +103,47 @@ function Payment() {
     }
 
     const handleData = () => {
-        const hotel = JSON.parse(localStorage.getItem('hotel'));
-        const customerId = JSON.parse(localStorage.getItem('customerData'))._id;
-        const address = JSON.parse(localStorage.getItem('CustomerCurrentLoc'));
-        const cart = JSON.parse(localStorage.getItem('cart'));
-
-        let items = [];
+        const store = JSON.parse(localStorage.getItem('storeinfo'));
+        const user = '6rdreserser444dddfxdfAwd';
+        const location = JSON.parse(localStorage.getItem('CustomerCurrentLoc'));
+        const address = JSON.parse(localStorage.getItem('Address'));
+        const cart =cartItems
+const shippingInfo={'address':address.addressone,
+'city':'bangalore',
+'state':'karnataka',
+'phoneNo':address.contactnumber,
+'coordinates':[location.long,location.lat],
+}
+        var items = [];
 
         cart.map((item) => {
             let temp = {
                 name: item.name,
                 price: item.price,
-                quantity: item.qty,
-                veg: item.veg,
+                quantity: item.quantity,
+                image:item.image,
+                product: item.product,
             };
             items.push(temp);
         });
-
+ var yaar={'store':store._id,
+'title':store.title,
+'address':store.location,
+'coordinates':[22,43]}
         let data = {
-            restaurant_id: hotel._id,
-            restaurant_name: hotel.name,
-            location: hotel.geometry.coordinates,
-            address_1: address.flat_no,
-            address_2: address.landmark,
-            img_url: hotel.img_url,
-            items: items,
+            storeInfo:yaar,
+            orderItems: items,
+shippingInfo:shippingInfo,
+user:store._id,
+totalPrice:Total,
+
         };
         // console.log(data);
         // console.log(customerId);
 
         var config = {
             method: 'patch',
-            url: `${process.env.REACT_APP_API_URL}/api/customer/order/${customerId}`,
+            url: `http://127.0.0.1:9000/payment/createorder/`,
             headers: {
                 'Content-Type': 'application/json',
             },

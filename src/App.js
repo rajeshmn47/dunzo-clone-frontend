@@ -15,14 +15,16 @@ import {auth} from './firebase'
 import {useState,useEffect} from 'react'
 import Tap from './components/cart/map'
 import AddDetails from './components/cart/adddetails'
-
+import Confirmation from './components/confirmation'
+import {useDispatch} from 'react-redux'
 
 function App() {
-
+const dispatch=useDispatch()
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
     if(authUser){
       console.log(authUser,'ok good bro')
+      dispatch(authUser)
     } else {
       console.log('sorry bro')
     }
@@ -44,6 +46,7 @@ function App() {
           <Route path='/addadress' element={<Address/>} /> 
           <Route path='/map' element={<Tap/>}/>
           <Route path='/adddetails' element={<AddDetails/>}/>
+          <Route path='/confirmation' element={<Confirmation/>}/>
         </Routes>
       </Router>
     </>
