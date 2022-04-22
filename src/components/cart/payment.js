@@ -163,38 +163,17 @@ totalPrice:Total,
     return (
         <>
             <>
-                <Wrapper className='container'>
-                    <div className='row'>
-                        <Logo className='col-1'>
-                            <Wallet src='Icons/wallet.svg' alt='placeholder' />
-                        </Logo>
-                        <div className='col-11'>
-                            <div className='row row-cols-1'>
-                                <div className='col'>
-                                    <Title>Payment</Title>
-                                </div>
-                                <WarningText className='col-10 ml-3 mb-3 '>
-                                    Please use RazorPay as Payment method as
-                                    other services are under Maintenance.
-                                </WarningText>
+             
+                       
+                 
                                 <button
-                                    className='btn btn-success btn-sm col-3 ml-3 mt-4'
+                                    className='paybtn'
                                     onClick={handlePayment}
                                     // onClick={handleData}
                                 >
-                                    <img
-                                        src='https://razorpay.com/assets/razorpay-logo-white.svg'
-                                        alt='RazorPay'
-                                        style={{
-                                            width: 'inherit',
-                                            height: 'inherit',
-                                        }}
-                                    />
+                                   
                                 </button>
-                            </div>
-                        </div>
-                    </div>
-                </Wrapper>
+                
             </>
         </>
     );

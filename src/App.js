@@ -17,6 +17,7 @@ import Tap from './components/cart/map'
 import AddDetails from './components/cart/adddetails'
 import Confirmation from './components/confirmation'
 import {useDispatch} from 'react-redux'
+import {loadUser} from './actions/userAction'
 
 function App() {
 const dispatch=useDispatch()
@@ -24,7 +25,7 @@ const dispatch=useDispatch()
     auth.onAuthStateChanged((authUser) => {
     if(authUser){
       console.log(authUser,'ok good bro')
-      dispatch(authUser)
+     dispatch(loadUser(authUser))
     } else {
       console.log('sorry bro')
     }
