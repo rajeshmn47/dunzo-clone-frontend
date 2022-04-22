@@ -88,6 +88,7 @@ font-size: 14px;
 .search{
   padding-bottom: 10vh;
   border-bottom: 1px solid #DDDDDD;
+  height:10vh;
 }
 .store img{
   width: 100%;

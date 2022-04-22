@@ -12,8 +12,8 @@ import {useSelector,useDispatch} from 'react-redux'
 
 export const Topbar=()=>{
     const { cartItems } = useSelector((state) => state.cart);
+    const { user } = useSelector((state) => state.user);
     console.log(cartItems)
-    const [user,setUser]=useState()
     const navigate=useNavigate()
     const data = JSON.parse(localStorage.getItem('Coordinates'));
     console.log(data)
@@ -28,7 +28,7 @@ return(
 <Badge badgeContent={cartItems?.reduce((a,b)=>a+b.quantity,0)} color="error" onClick={()=>navigate('/cart')}>
 <ShoppingCartOutlinedIcon/>
 </Badge>
-{user?user.username:<h5 onClick={()=>navigate('/signin')}>Sign in</h5>}
+{user?user.username:<h5 onClick={()=>navigate('/auth')}>Sign in</h5>}
 <MoreVertIcon/>
 </div>
 </div>
