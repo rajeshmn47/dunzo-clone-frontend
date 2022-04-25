@@ -1,53 +1,63 @@
 import homebanner from './images/dunzobanner.jpeg'
 import paan from './images/paan.png'
-import fruitsy from './images/fruitsy.png'
 import pets from './images/petsupply.png'
-import lastpic from './images/lastpic.png'
-import pickup from './images/pickup.png'
-import anystore from './images/anystore.png'
-import vegy from './images/vegy.png'
 import Topbar from './topbar'
 import medicine from './images/medicine.png'
 import wellness from './images/wellness.png'
+import {useState,useEffect} from 'react'
+import axios from 'axios'
 
 export const Home=()=>{
+    const[stores,setStores]=useState()
+    const[on,setOn]=useState(false)
+const handleclick=async(value)=>{
+    setOn(true)
+    const  data=await axios.get(`https://dunzobackend.herokuapp.com/store/getstores/${value}`)
+    console.log(data.stores)
+setStores(data.stores)
+}
     return(
         <>
         <Topbar/>
+        {on?<>
         <div className='imagebanner'>
 <img src={homebanner} alt='' width='100%'/>
 
 </div>
 <div className='homeimages'>
-<img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_pnd_secondary2_1613527381240.png' alt='' width='45%'/>
+<img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_pnd_secondary2_1613527381240.png' 
+alt='' width='45%' onClick={()=>handleclick('PROVISIONS')}/>
 <img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/operator-FFWUCfzmUzhok89HMYt0ON2Gy5oZECO73gRenPw11HxAeCLBtTBOG8FMqMTe92UOnScOPMUnjYDcaPVxx7wSFJwXJ3kSR3YRsPby4EgC4zW2mVYLc99zuvVh7O2Ppmx2QMQd40UiwYLGhy0OjbMayr.png'
-alt='' width='45%'/>
+alt='' width='45%' onClick={()=>handleclick('FRUITSANDVEGETABLES')}/>
 <img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_meat_secondary2_1613527536249.png' 
-alt='' width='45%'/>
-<img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_fnv_secondary2_1613527515094.png' alt='' width='45%'/>
+alt='' width='45%' onClick={()=>handleclick('PROVISIONS')}/>
+<img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_fnv_secondary2_1613527515094.png' alt='' 
+width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
 </div>
 <div className='belowhomeimages'>
 <div>
-<img src={paan} alt='' width='75%'/>
+<img src={paan} alt='' width='75%' onClick={()=>handleclick('PAAN')}/>
 <h5>Paan Shop</h5>
 </div>
 <div>
-<img src={pets} alt='' width='75%'/>
+<img src={pets} alt='' width='75%' onClick={()=>handleclick('PETSFOOD')}/>
 <h5>Pet Supplies</h5>
 </div>
 <div>
     
-<img src={medicine} alt='' width='75%'/>
+<img src={medicine} alt='' width='75%' onClick={()=>handleclick('MEDICINE')}/>
 
 <h5>Medicines</h5>
 </div>
 
 <div>
-<img src={wellness} alt='' width='75%'/>
+<img src={wellness} alt='' width='75%' onClick={()=>handleclick('WELLNESS')}/>
 <h5>Health And Wellness</h5>
 </div>
 
-</div>
+</div></>:<div>
+    {stores?<div></div>:<div>rajeshh</div>}
+    </div>}
         </>
     )
 }
