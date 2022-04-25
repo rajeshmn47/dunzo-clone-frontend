@@ -38,7 +38,7 @@ setStorey(data.data)
         {!loading?<>
         <TextField style={{width:'100%',height:'5vh',padding:'1vmax'}} variant='outlined' 
         placeholder='search for item or a store' onChange={(e)=>handlechange(e.target.value)}/>
-<Search style={{position:'absolute',top:'55%',right:'5%'}}/></>:
+<Search style={{position:'absolute',top:'55%',right:'9%'}}/></>:
 <div style={{height:'100vh',width:'100vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
 <CircularProgress style={{color:'#00D290'}}/>
 </div>}
