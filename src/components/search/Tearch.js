@@ -3,10 +3,14 @@ import { Search } from "@material-ui/icons"
 import { useState,useEffect } from "react"
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import Minicart from './minicart'
 
 export const Searc=()=>{
+    const[change,setChange]=useState(false)
     const [loading,setLoading]=useState(false)
+    const[searchvalue,setSearchvalue]=useState()
     const navigate=useNavigate()
+    const[storey,setStorey]=useState([])
 const[stores,setStores]=useState()
 useEffect(()=>{
     async function getstores(){
@@ -18,7 +22,15 @@ useEffect(()=>{
 },[])
 
 const handlechange=async (value)=>{
-const data=await axios.get(`http://localhost:9000/store/search/${value}`)
+    console.log(value)
+    setChange(true)
+    if(!(value==='')){
+    console.log(value)
+    setSearchvalue(value)
+const data=await axios.get(`http://localhost:9000/store/search/?q=${value}`)
+console.log(data.data)
+setStorey(data.data)
+    }
 }
     return(
         <>
@@ -31,6 +43,29 @@ const data=await axios.get(`http://localhost:9000/store/search/${value}`)
 <CircularProgress style={{color:'#00D290'}}/>
 </div>}
 </div>
+<div className='searched'>
+    {searchvalue?<h5>search results for {searchvalue}</h5>:null}
+</div>
+<div className="searchedproducts">
+{storey?storey?.stars?.map((k)=><>
+<div className="storesearch">
+<h5>{k.title}</h5>
+<div className="storeys">
+{storey?storey?.products?.map((p)=><>
+        {k?.category?.some((x)=>x.name===p?.subcat)&&<div className='singleproduct'>
+            
+            <img src={p.image} alt='' width='40'/>
+<h5>{p.name}</h5>
+<h5>1KG</h5>
+<div className='pricebtn'>
+    <h5>{p.price}</h5>
+  
+<button className="smalladd">+ ADD</button>
+</div>
+</div>}</>):null}
+  </div></div></>):null}
+</div>
+{!change&&
 <div className="stores">
 {stores?.map((s)=><>
 <div className='store' onClick={()=>navigate(`/store/${s._id}`)}>
@@ -39,8 +74,8 @@ const data=await axios.get(`http://localhost:9000/store/search/${value}`)
 </div>
 </>
 )}
-</div>
-
+</div>}
+<Minicart/>
         </>
     )
 }

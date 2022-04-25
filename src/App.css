@@ -27,10 +27,7 @@ body{
   min-width: 35%;
   justify-content: space-evenly;
 }
-.search{
-  padding: 5vh 5vw;
-  position: relative;
-}
+
 .navbarcontainer{
   padding-bottom: 2vh;
   margin-top:5vh;
@@ -53,7 +50,6 @@ body{
 .belowhomeimages{
   padding: 2vmax;
   display: flex;
-  flex-wrap: wrap;
 }
 .belowhomeimages div{
   background-color: #FFFFFF;
@@ -86,10 +82,13 @@ font-size: 14px;
   height:20%;
 }
 .search{
-  padding-bottom: 10vh;
   border-bottom: 1px solid #DDDDDD;
-  height:10vh;
+  height:15vh;
+ display: flex;
+  padding: 4vh 5vw;
+  position: relative;
   box-sizing: border-box;
+  align-items: center;
 }
 .store img{
   width: 100%;

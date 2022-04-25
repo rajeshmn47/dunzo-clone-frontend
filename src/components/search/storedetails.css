@@ -121,6 +121,8 @@ font-size: 12px;
 font-family: sans-serif;
 box-shadow: 5px 10px 8px 10px #DDDDDD;
 align-items:center;
+z-index:1000000000000000000000;
+background-color: #FFFFFF;
 }
 
 .cartbtn{
@@ -136,4 +138,36 @@ align-items:center;
 .drawerbtns{
     display: flex;
     padding:1vmax;
+}
+.searched{
+    margin: 1vh 5vw;
+}
+.storesearch{
+    margin: 0vh 5vw;
+}
+.storeys{
+    display: flex;
+    padding: 1vh 2vw;
+    box-sizing: border-box;
+}
+.singleproduct{
+    padding: 1vh 1vw;
+    display: flex;
+    padding-top: 3vh;
+    flex-direction: column;
+    margin: 1vh 3vw;
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    width: 45vw;
+    box-shadow: 3px 3px 3px 3px rgb(228, 227, 227);
+    box-sizing: border-box;
+}
+
+.pricebtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+width: 100%;
+padding: 3vh 2vw;
 }

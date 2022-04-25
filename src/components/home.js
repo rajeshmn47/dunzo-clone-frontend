@@ -21,7 +21,8 @@ export const Home=()=>{
 <div className='homeimages'>
 <img src={fruitsy} alt='' width='50%'/>
 <img src={vegy} alt='' width='50%'/>
-<img src={lastpic} alt='' width='50%'/>
+<img src='https://ik.imagekit.io/dunzo/home/tr:w-332,h-244_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_meat_secondary2_1613527536249.png' 
+alt='' width='50%'/>
 <img src={pickup} alt='' width='50%'/>
 </div>
 <div className='belowhomeimages'>
@@ -39,10 +40,7 @@ export const Home=()=>{
 
 <h5>Medicines</h5>
 </div>
-<div>
-<img src={anystore} alt='' width='75%'/>
-<h5>Any Store In The City</h5>
-</div>
+
 <div>
 <img src={wellness} alt='' width='75%'/>
 <h5>Health And Wellness</h5>

@@ -17,7 +17,7 @@ export const Topbar=()=>{
     console.log(cartItems)
     const navigate=useNavigate()
     const data = JSON.parse(localStorage.getItem('Coordinates'));
-    console.log(data)
+    
 return(
     <>
     <div className='navbarcontainer'>
@@ -34,9 +34,9 @@ return(
 </div>
 </div>
 <div className='search'>
-<TextField style={{width:'100%',height:'5vh',padding:'1vmax',position:'relative'}} variant='outlined' 
+<TextField style={{width:'100%',height:'5vh',padding:'1vmax',position:'relative',marginBottom:'3vh'}} variant='outlined' 
 placeholder='search for item or a store' onClick={()=>navigate('/search')}/>
-<Search style={{position:'absolute',top:'33%',right:'5%'}}/>
+<Search style={{position:'absolute',top:'42%',right:'8%'}}/>
 </div>
 </div>
     </>
