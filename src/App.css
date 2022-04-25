@@ -43,9 +43,9 @@ body{
 }
 .homeimages{
   display: flex;
-  flex-wrap: wrap;
   padding: 2vmax;
-  box-sizing: border-box;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .belowhomeimages{
   padding: 2vmax;
@@ -95,4 +95,8 @@ font-size: 14px;
   border: 1px solid #DDDDDD;
   margin-bottom:1vh;
   border-radius:1vh;
+}
+
+.homeimages img{
+  margin:1vh 1vw;
 }

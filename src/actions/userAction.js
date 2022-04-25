@@ -19,7 +19,7 @@ export const register = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: REGISTER_USER_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/register',
+      'https://dunzobackend.herokuapp.com/auth/register',
       { myform }
     )
     console.log(data)
@@ -36,7 +36,7 @@ export const login = (myform) => async (dispatch) => {
     console.log(myform)
     dispatch({ type: LOGIN_REQUEST })
     const { data } = await axios.post(
-      'https://stackoverflowclonerajesh.herokuapp.com/auth/login',
+      'https://dunzobackend.herokuapp.com/auth/login',
       { myform }
     )
     console.log(data)

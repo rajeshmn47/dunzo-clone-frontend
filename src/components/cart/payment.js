@@ -69,7 +69,7 @@ function Payment() {
         // console.log(Total);
         e.preventDefault();
 
-        const API_URL = `http://127.0.0.1:9000/payment/`;
+        const API_URL = `https://dunzobackend.herokuapp.com/payment/`;
         const orderUrl = `${API_URL}order/${Total}`;
         const response = await Axios.get(orderUrl);
         const { data } = response;
@@ -145,7 +145,7 @@ totalPrice:Total,
 
         var config = {
             method: 'patch',
-            url: `http://127.0.0.1:9000/payment/createorder/`,
+            url: `https://dunzobackend.herokuapp.com/payment/createorder/`,
             headers: {
                 'Content-Type': 'application/json',
             },

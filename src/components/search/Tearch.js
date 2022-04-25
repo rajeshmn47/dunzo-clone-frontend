@@ -14,7 +14,7 @@ export const Searc=()=>{
 const[stores,setStores]=useState()
 useEffect(()=>{
     async function getstores(){
-    const data=await axios.get('http://localhost:9000/store/getallstores')
+    const data=await axios.get('https://dunzobackend.herokuapp.com/store/getallstores')
     console.log(data)
     setStores(data.data.stores)
     }
@@ -27,7 +27,7 @@ const handlechange=async (value)=>{
     if(!(value==='')){
     console.log(value)
     setSearchvalue(value)
-const data=await axios.get(`http://localhost:9000/store/search/?q=${value}`)
+const data=await axios.get(`https://dunzobackend.herokuapp.com/store/search/?q=${value}`)
 console.log(data.data)
 setStorey(data.data)
     }

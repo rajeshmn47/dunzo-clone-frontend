@@ -31,7 +31,7 @@ export const Storedetails=()=>{
     },[id.id])
     useEffect(()=>{
 async function getproducts(){
-    const data=await axios.get(`http://localhost:9000/store/getproducts/?category=${category}`)
+    const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?category=${category}`)
     console.log(data?.data)
     setProducts(data?.data.products)
 }
