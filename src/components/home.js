@@ -17,8 +17,8 @@ const handleclick=async(value)=>{
     console.log(value)
     setOn(false)
     const  data=await axios.get(`https://dunzobackend.herokuapp.com/store/getstores/${value}`)
-    console.log(data.stores)
-setStores(data.stores)
+    console.log(data.data.stores)
+setStores(data.data.stores)
 }
     return(
         <>
