@@ -6,12 +6,13 @@ import medicine from './images/medicine.png'
 import wellness from './images/wellness.png'
 import {useState,useEffect} from 'react'
 import axios from 'axios'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export const Home=()=>{
     const[stores,setStores]=useState()
-    const[on,setOn]=useState(false)
+    const[on,setOn]=useState(true)
 const handleclick=async(value)=>{
-    setOn(true)
+    setOn(false)
     const  data=await axios.get(`https://dunzobackend.herokuapp.com/store/getstores/${value}`)
     console.log(data.stores)
 setStores(data.stores)
@@ -56,7 +57,10 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
 </div>
 
 </div></>:<div>
-    {stores?<div></div>:<div>rajeshh</div>}
+    {stores?<div></div>:<div className='progress'>
+    <CircularProgress style={{color:'#00D290'}}/>
+    
+    </div>}
     </div>}
         </>
     )
