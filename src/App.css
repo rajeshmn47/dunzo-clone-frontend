@@ -128,3 +128,6 @@ font-size: 14px;
   justify-content: space-between;
   align-items: center;
 }
+.stardust div h5{
+  margin-top: 1vh;
+}
