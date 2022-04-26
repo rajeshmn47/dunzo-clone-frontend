@@ -126,7 +126,7 @@ font-size: 14px;
   display:flex;
   flex-direction:column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .stardust div h5{
   margin-top: 1vh;
