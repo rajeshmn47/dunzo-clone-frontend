@@ -121,7 +121,8 @@ font-size: 14px;
   height:20%;
 }
 .stardust div{
-  margin: 0vh 2vw;
+  height: 100%;
+  margin-right: 5vw;
   display:flex;
   flex-direction:column;
   justify-content: space-between;
