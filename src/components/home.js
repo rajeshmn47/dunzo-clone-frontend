@@ -62,8 +62,12 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
 </div></>:<div>
     {stores?<div className='stardusts'>
     {stores?.map((s)=> <>
-        <div className='store' onClick={()=>navigate(`/store/${s._id}`)}>
+        <div className='stardust' onClick={()=>navigate(`/store/${s._id}`)}>
+            <div>
 <img src={s.img_url} alt='' width='40'/>
+
+</div>
+<div></div>
 <h5>{s.title}load</h5>
         </div>
     </>)

@@ -107,3 +107,19 @@ font-size: 14px;
   justify-content: center;
   align-items: center;
 }
+.stardusts{
+  padding: 1vh 2vw;
+}
+
+.stardust{
+  margin:5vh 3vw;
+  display:flex;
+  height:auto;
+  align-items:center;
+  justify-content: center;
+  width:33%;
+  height:20%;
+}
+.stardust div{
+  margin: 0vh 2vw;
+}
