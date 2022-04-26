@@ -68,8 +68,9 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
 
 </div>
 <div>
-<h5>{s.title}load</h5>
-<h5>{s.location}load</h5>
+<h5>{s.title}</h5>
+<h5>{s.location}</h5>
+<h5>13.1 km <span className='spanish'>34 mins</span></h5>
 </div>
         </div>
     </>)
