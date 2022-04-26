@@ -7,10 +7,12 @@ import wellness from './images/wellness.png'
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import {useNavigate} from 'react-router-dom'
 
 export const Home=()=>{
     const[stores,setStores]=useState()
     const[on,setOn]=useState(true)
+    const navigate=useNavigate()
 const handleclick=async(value)=>{
     setOn(false)
     const  data=await axios.get(`https://dunzobackend.herokuapp.com/store/getstores/${value}`)
@@ -57,7 +59,15 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
 </div>
 
 </div></>:<div>
-    {stores?<div></div>:<div className='progress'>
+    {stores?<div className='stardusts'>
+    {stores?.map((s)=> <>
+        <div className='store' onClick={()=>navigate(`/store/${s._id}`)}>
+<img src={s.img_url} alt='' width='40'/>
+<h5>{s.title}</h5>
+        </div>
+    </>)
+        }
+    </div>:<div className='progress'>
     <CircularProgress style={{color:'#00D290'}}/>
     
     </div>}
