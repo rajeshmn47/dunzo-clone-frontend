@@ -14,6 +14,7 @@ export const Home=()=>{
     const[on,setOn]=useState(true)
     const navigate=useNavigate()
 const handleclick=async(value)=>{
+    console.log(value)
     setOn(false)
     const  data=await axios.get(`https://dunzobackend.herokuapp.com/store/getstores/${value}`)
     console.log(data.stores)
@@ -63,7 +64,7 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
     {stores?.map((s)=> <>
         <div className='store' onClick={()=>navigate(`/store/${s._id}`)}>
 <img src={s.img_url} alt='' width='40'/>
-<h5>{s.title}</h5>
+<h5>{s.title}load</h5>
         </div>
     </>)
         }
