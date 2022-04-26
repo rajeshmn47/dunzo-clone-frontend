@@ -67,10 +67,10 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
 <img src={s.img_url} alt='' width='80'/>
 
 </div>
-<div></div>
+<div>
 <h5>{s.title}load</h5>
 <h5>{s.location}load</h5>
-
+</div>
         </div>
     </>)
         }
