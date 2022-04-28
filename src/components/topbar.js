@@ -37,7 +37,7 @@ return(
 <div className='search'>
 <TextField style={{width:'100%',height:'5vh',padding:'1vmax',position:'relative',marginBottom:'3vh'}} variant='outlined' 
 placeholder='search for item or a store' onClick={()=>navigate('/search')}/>
-<Search style={{position:'absolute',top:'42%',right:'8%'}}/>
+<Search style={{position:'absolute',top:'37%',right:'8%'}}/>
 </div>
 </div>
     </>
