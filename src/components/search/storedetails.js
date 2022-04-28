@@ -30,7 +30,7 @@ export const Storedetails=()=>{
     useEffect(()=>{
        dispatch(getstoredetails(id.id))
        console.log(storedata)
-       if(storedata?.category[0]?.name){
+       if(storedata.category&&storedata?.category[0]?.name){
        setCategory(storedata?.category[0]?.name)
        }
     },[id.id,storedata])
