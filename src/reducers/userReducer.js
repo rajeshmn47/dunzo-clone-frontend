@@ -57,7 +57,7 @@ import {
               ...state,
               loading: false,
               isAuthenticated: true,
-              user: action.payload,
+              user:'ok bro',
             };
       
           case LOGOUT_SUCCESS:
