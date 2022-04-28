@@ -131,3 +131,19 @@ font-size: 14px;
 .stardust div h5{
   margin-top: 1vh;
 }
+
+.logoutbtn{
+  background-color: #FFFFFF;
+  outline: none;
+  display: flex;
+  align-items: center;
+  border:1px solid #FFFFFF;
+  padding: 1vh 1vw;
+}
+.aadhaar{
+  background-color: #F5FBFF;
+  width: 95vw;
+  margin: 2.5vw;
+padding: 1vh 1vw;
+box-sizing: border-box;
+}
