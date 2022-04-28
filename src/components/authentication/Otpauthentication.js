@@ -44,7 +44,7 @@ const Otpauth = () => {
         if (otp === null || final === null)
             return;
         final.confirm(otp).then((result) => {
-            // success
+            alert('successfully logged in')
 			console.log(result)
         }).catch((err) => {
             alert("Wrong code");
