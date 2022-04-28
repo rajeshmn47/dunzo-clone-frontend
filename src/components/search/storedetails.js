@@ -55,6 +55,7 @@ const toggleDrawer = (open) => (event) => {
 const handleclearcart=()=>{
     dispatch(deletecart())
     localStorage.setItem("storeinfo", JSON.stringify(storedata));
+    setOpen(false)
 }
     return(
         <>
