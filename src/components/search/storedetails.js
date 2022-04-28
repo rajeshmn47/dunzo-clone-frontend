@@ -56,6 +56,7 @@ const handleclearcart=()=>{
     dispatch(deletecart())
     localStorage.setItem("storeinfo", JSON.stringify(storedata));
     setOpen(false)
+    console.log('rskesh')
 }
     return(
         <>
