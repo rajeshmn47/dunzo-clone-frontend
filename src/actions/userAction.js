@@ -48,7 +48,7 @@ export const login = (myform) => async (dispatch) => {
   }
 }
 
-export const loadUser = () => async (dispatch,user) => {
+export const loadUser = (user) => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_SUCCESS, payload:user})
     }
