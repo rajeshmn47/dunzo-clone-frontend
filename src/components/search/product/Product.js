@@ -18,8 +18,7 @@ export const Product=({propss,open,setOpen})=>{
 const handleAdd=(id)=>{
     if(!storeinfo||storeinfo._id===storedata._id){
     localStorage.setItem("storeinfo", JSON.stringify(storedata));
-    setqty(qty + 1);
-    dispatch(addItemsToCart(id,qty));
+    dispatch(addItemsToCart(id,1))
     }
     else{
 setOpen(true)
