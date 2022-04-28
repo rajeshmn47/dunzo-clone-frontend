@@ -15,9 +15,15 @@ export const Profile=()=>{
         <div className='aadhaar'>
             Verify your age to order paan items
             </div>
+            <div className='profilediv'>
+    <button className='logoutbtn'>
+     <ListOutlinedIcon style={{marginRight:'2vw'}}/>   
+        About</button>
+<ChevronRightOutlinedIcon/>
+    </div>
         <div style={{padding:'1vh 1vw',margin:'1vh 1vw',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
     <button onClick={()=>auth.signOut()} className='logoutbtn'>
-     <ExitToAppOutlinedIcon/>   
+     <ExitToAppOutlinedIcon style={{marginRight:'2vw'}}/>   
         Logout</button>
 <ChevronRightOutlinedIcon/>
     </div>

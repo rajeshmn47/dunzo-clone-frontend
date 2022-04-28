@@ -144,6 +144,10 @@ font-size: 14px;
   background-color: #F5FBFF;
   width: 95vw;
   margin: 2.5vw;
-padding: 1vh 1vw;
+padding: 2vh 2vw;
 box-sizing: border-box;
+}
+
+.aadhaar h5{
+  color:#0B5E9D;
 }
