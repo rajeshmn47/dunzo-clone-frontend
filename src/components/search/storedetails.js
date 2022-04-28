@@ -4,6 +4,7 @@ import axios from 'axios'
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import './storedetails.css'
 import addItemsToCart from '../../actions/cartAction'
+import {deletecart} from '../../actions/cartAction'
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Product from'./product/Product'
@@ -27,8 +28,11 @@ export const Storedetails=()=>{
     
     console.log(id)
     useEffect(()=>{
-       dispatch(getstoredetails(id.id)) 
-    },[id.id])
+       dispatch(getstoredetails(id.id))
+       if(store?.category[0]?.name){
+       setCategory(store?.category[0]?.name)
+       }
+    },[id.id,store])
     useEffect(()=>{
 async function getproducts(){
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?category=${category}`)
@@ -39,12 +43,18 @@ if(category){
 getproducts()
 }
     },[category])
+
+   
 const addtocart=()=>{
 
 }
 const toggleDrawer = (open) => (event) => {
     setOpen(false)
   };
+const handleclearcart=()=>{
+    dispatch(deletecart())
+    localStorage.setItem("storeinfo", JSON.stringify(storedata));
+}
     return(
         <>
   <div style={{display:'flex',alignItems:'center',padding:'1vmax',justifyContent:'space-between',borderBottom:'1px solid #CCCCCC'}}>     
@@ -80,7 +90,9 @@ const toggleDrawer = (open) => (event) => {
 <Drawer style={{height:'40vh'}} anchor='bottom' open={open} onClose={toggleDrawer(false)}>
     <div className='drawerbtns'>
 <Button style={{backgroundColor:'#FFFFFF',width:'50vw',borderColor:'rgb(0, 192, 139)',borderRadius:'20px'}}>Cancel</Button>
-<Button style={{backgroundColor:'rgb(0, 192, 139)',width:'50vw',color:'#FFFFFF'}}>Clear cart</Button>
+<Button style={{backgroundColor:'rgb(0, 192, 139)',width:'50vw',color:'#FFFFFF'}} 
+onClick={()=>handleclearcart()}>
+    Clear cart</Button>
 </div>
     </Drawer>
         </>

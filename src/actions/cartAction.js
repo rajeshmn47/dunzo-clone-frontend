@@ -20,7 +20,7 @@ import {
         quantity, 
       },
     });
- dispatch({type:REMOVE_CART_ITEM,payload:{product:id}})
+ 
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
   };
   
@@ -34,7 +34,7 @@ import {
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
   };
   
-  export const deletecart = (id) => async (dispatch, getState) => {
+  export const deletecart = () => async (dispatch, getState) => {
     dispatch({
       type: DELETE_CART,
     });
