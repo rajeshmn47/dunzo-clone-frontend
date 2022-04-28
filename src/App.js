@@ -24,7 +24,9 @@ const dispatch=useDispatch()
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
     if(authUser){
+      alert('u re logged in')
       console.log(authUser,'ok good bro')
+      
      dispatch(loadUser(authUser))
     } else {
       console.log('sorry bro')
