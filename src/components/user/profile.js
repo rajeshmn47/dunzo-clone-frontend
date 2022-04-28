@@ -1,4 +1,5 @@
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
+import {auth} from './firebase'
 
 export const Profile=()=>{
     return(

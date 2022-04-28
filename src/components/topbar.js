@@ -8,6 +8,7 @@ import {TextField,Badge} from '@material-ui/core'
 import { Search } from '@material-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux'
+import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
 
 
 export const Topbar=()=>{
@@ -29,7 +30,7 @@ return(
 <Badge badgeContent={cartItems?.reduce((a,b)=>a+b.quantity,0)} color="error" onClick={()=>navigate('/cart')}>
 <ShoppingCartOutlinedIcon/>
 </Badge>
-{user?user.username:<h5 onClick={()=>navigate('/auth')}>Sign in</h5>}
+{user?<AccountBoxOutlinedIcon onClick={()=>navigate('/profile')}/>:<h5 onClick={()=>navigate('/auth')}>Sign in</h5>}
 <MoreVertIcon/>
 </div>
 </div>
