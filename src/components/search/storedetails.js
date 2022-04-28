@@ -33,7 +33,7 @@ export const Storedetails=()=>{
        if(storedata?.category&&storedata?.category[0]?.name){
        setCategory(storedata?.category[0]?.name)
        }
-    },[id.id,storedata])
+    },[id.id])
     useEffect(()=>{
 async function getproducts(){
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?category=${category}`)
