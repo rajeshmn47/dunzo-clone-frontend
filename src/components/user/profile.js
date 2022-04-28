@@ -3,6 +3,9 @@ import {auth} from '../../firebase'
 import ListOutlinedIcon from '@material-ui/icons/ListOutlined';
 import ChevronRightOutlinedIcon from '@material-ui/icons/ChevronRightOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import {ContactSupportIcon,LocalAtmIcon} from '@material-ui/icons';
+import {LocalAtmIcon} from '@material-ui/icons';
+
 
 export const Profile=()=>{
     return(
@@ -13,8 +16,20 @@ export const Profile=()=>{
         alt='' height='14' width='61'/>
         </div>
         <div className='aadhaar'>
-            Verify your age to order paan items
+            <h5>Verify your age to order paan items</h5>
             </div>
+            <div className='profilediv'>
+    <button className='logoutbtn'>
+     <ListOutlinedIcon style={{marginRight:'2vw'}}/>   
+        Dunzo Cash</button>
+<ChevronRightOutlinedIcon/>
+    </div>
+    <div className='profilediv'>
+    <button className='logoutbtn'>
+     <ContactSupportIcon style={{marginRight:'2vw'}}/>   
+        Support</button>
+<ChevronRightOutlinedIcon/>
+    </div>
             <div className='profilediv'>
     <button className='logoutbtn'>
      <ListOutlinedIcon style={{marginRight:'2vw'}}/>   
