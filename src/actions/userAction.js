@@ -6,6 +6,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_FAIL,
   REGISTER_USER_FAIL,
+  LOGOUT_SUCCESS,
   LOAD_USER_SUCCESS,
   LOAD_USER_REQUEST,
   LOAD_USER_FAIL,
@@ -51,6 +52,15 @@ export const login = (myform) => async (dispatch) => {
 export const loadUser = (user) => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_SUCCESS, payload:user})
+    }
+   catch (error) {
+    console.log(error)
+  }
+}
+
+export const logoutUser = (user) => async (dispatch) => {
+  try {
+    dispatch({ type: LOGOUT_SUCCESS, payload:user})
     }
    catch (error) {
     console.log(error)
