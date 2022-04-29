@@ -7,6 +7,7 @@
 body{
   font-family: Gilroy,sans-serif;
   -webkit-font-smoothing: antialiased;
+  width:100vw;
 }
 .navbar{
   display: flex;
@@ -149,11 +150,45 @@ box-sizing: border-box;
 }
 .aadhaar h5{
   color:#0B5E9D;
+  margin-bottom: 1vh;
+  font-size:13px;
+}
+.aadhaar h6{
+  color:#0B5E9D;
+  font-size: 12px;
 }
 .profilediv{
-  padding:1vh 1vw;
   margin:1vh 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+}
+.profiledivgap{
+  background-color:#F3F3F5;
+  height: 2vh;
+}
+.edit{
+  background-color: #FFFFFF;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #00B37A;
+  font-weight:600;
+}
+.profiletop{
+  display: flex;
+  margin: 1vh 4vw;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }

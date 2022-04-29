@@ -4,6 +4,7 @@ import pets from './images/petsupply.png'
 import Topbar from './topbar'
 import medicine from './images/medicine.png'
 import wellness from './images/wellness.png'
+import Footer from './footer/Footer'
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -80,6 +81,8 @@ width='45%' onClick={()=>handleclick('MEATANDFRESH')}/>
     
     </div>}
     </div>}
+
+    <Footer/>
         </>
     )
 }

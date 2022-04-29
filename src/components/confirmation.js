@@ -22,7 +22,7 @@ function Confirmation() {
                             className='text-success'
                             style={{
                                 fontFamily: 'sans-serif',
-                                fontSize: '50px',
+                                fontSize: '30px',
                             }}
                         >
                             ORDER CONFIRMED
