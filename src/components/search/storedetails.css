@@ -108,10 +108,12 @@ font-family: sans-serif;
     font-weight: 700;
     font-family: sans-serif;
 }
-
+.search{
+    padding: 2vh ovw;
+}
 .minicart{
     padding: 2vh 5vw;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -160,7 +162,7 @@ background-color: #FFFFFF;
     align-items: center;
     height: 30vh;
     width: 45vw;
-    box-shadow: 3px 3px 3px 3px rgb(228, 227, 227);
+    box-shadow: 1px 1px 1px 1px rgb(228, 227, 227);
     box-sizing: border-box;
 }
 

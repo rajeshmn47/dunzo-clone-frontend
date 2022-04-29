@@ -48,7 +48,7 @@ setStorey(data.data)
 </div>
 <div className="searchedproducts">
 {storey?storey?.stars?.map((k)=><>
-<div className="storesearch">
+<div className="storesearch" onClick={()=>navigate(`/store/${k._id}`)}>
 <h5>{k.title}</h5>
 <div className="storeys">
 {storey?storey?.products?.map((p)=><>
@@ -63,18 +63,7 @@ setStorey(data.data)
 <button className="smalladd">+ ADD</button>
 </div>
 </div>}</>):null}
-  </div></div></>):null}
-</div>
-{!change&&
-<div className="stores">
-{stores?.map((s)=><>
-<div className='store' onClick={()=>navigate(`/store/${s._id}`)}>
-<img src={s.img_url} alt='' width='40'/>
-<h5>{s.title}</h5>
-</div>
-</>
-)}
-</div>}
+</div></div></>):null}</div>
 <Minicart/>
         </>
     )
