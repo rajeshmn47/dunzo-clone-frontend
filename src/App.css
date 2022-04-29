@@ -83,13 +83,14 @@ font-size: 14px;
   height:20%;
 }
 .search{
-  border-bottom: 1px solid #DDDDDD;
-  height:15vh;
+
+  height:17vh;
  display: flex;
   padding: 4vh 5vw;
   position: relative;
   box-sizing: border-box;
   align-items: center;
+  border-bottom: 1px solid #DDDDDD;
 }
 .store img{
   width: 100%;
