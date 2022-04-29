@@ -96,6 +96,7 @@ color: rgb(0, 192, 139);
 font-size: 18px;
 font-weight: 700;
 font-family: sans-serif;
+border:1px solid #CCCCCC;
 }
 .added{
     display: flex;
