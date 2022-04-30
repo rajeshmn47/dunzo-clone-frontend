@@ -25,6 +25,7 @@ font-family: Gilroy,sans-serif;
 }
 .selected{
     border-bottom: 3px solid rgb(0, 192, 139);
+    transform: translateX(50%)
 }
 .categories::-webkit-scrollbar {
     display: none;
