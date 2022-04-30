@@ -41,7 +41,7 @@ export const Storedetails=()=>{
         if(query.search_text){
             setCategory('searchresults')
             }
-        else(storedata?.category&&storedata?.category[0]?.name){
+        else if(storedata?.category&&storedata?.category[0]?.name){
             setCategory(storedata?.category[0]?.name)
             }
     },[storedata])
