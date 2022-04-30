@@ -25,7 +25,11 @@ font-family: Gilroy,sans-serif;
 }
 .selected{
     border-bottom: 3px solid rgb(0, 192, 139);
-    transform: translateX(50%)
+
+    -webkit-box-align: center;
+  
+    -webkit-box-pack: center;
+
 }
 .categories::-webkit-scrollbar {
     display: none;
