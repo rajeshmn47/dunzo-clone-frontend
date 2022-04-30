@@ -49,7 +49,7 @@ setStorey(data.data)
 </div>
 <div className="searchedproducts">
 {storey?storey?.stars?.map((k)=><>
-<div className="storesearch" onClick={()=>navigate(`/store/${k._id}`)}>
+<div className="storesearch" onClick={()=>navigate(`/store/${k._id}?search_text=${searchvalue}`)}>
 <h5>{k.title}</h5>
 <div className="storeys">
 {storey?storey?.products?.map((p)=><>
