@@ -110,7 +110,9 @@ const handleclearcart=()=>{
 <div className='products'>
     {products?products?.map((p)=>
 <Product propss={p} open={open} setOpen={setOpen}/>):
-<CircularProgress style={{color:'#00D290'}}/>}
+<div style={{display:'flex',width:'100vw',justifyContent:'center'}}>
+<CircularProgress style={{color:'#00D290'}}/>
+</div>}
     </div>
 <Minicart/>
 <Drawer style={{height:'40vh'}} anchor='bottom' open={open} onClose={toggleDrawer(false)}>
