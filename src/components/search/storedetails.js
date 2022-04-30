@@ -15,6 +15,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import { useNavigate } from 'react-router-dom';
 import qs from "query-string";
+import {CircularProgress} from "@material-ui/core";
 
 export const Storedetails=()=>{
     const dispatch=useDispatch()
@@ -48,6 +49,7 @@ async function getproducts(){
     setProducts(data?.data.products)
 }
 async function getsearchresults(){
+    setProducts([])
     console.log(query.search_text)
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?search_text=${query.search_text}`)
     console.log(data?.data)
@@ -107,7 +109,8 @@ const handleclearcart=()=>{
 </div>
 <div className='products'>
     {products?products?.map((p)=>
-<Product propss={p} open={open} setOpen={setOpen}/>):null}
+<Product propss={p} open={open} setOpen={setOpen}/>):
+<CircularProgress style={{color:'#00D290'}}/>}
     </div>
 <Minicart/>
 <Drawer style={{height:'40vh'}} anchor='bottom' open={open} onClose={toggleDrawer(false)}>
