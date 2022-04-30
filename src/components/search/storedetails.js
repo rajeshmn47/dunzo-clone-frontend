@@ -14,6 +14,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import { useNavigate } from 'react-router-dom';
+import qs from "query-string";
 
 export const Storedetails=()=>{
     const dispatch=useDispatch()
@@ -27,10 +28,9 @@ export const Storedetails=()=>{
     const id=useParams()
     
     console.log(id)
-    useEffect(()=>{
-       dispatch(getstoredetails(id.id))
-       console.log(storedata)
-      
+    useEffect(()=>{    
+    dispatch(getstoredetails(id.id))
+       console.log(storedata)  
     },[id.id])
     useEffect(()=>{
         if(storedata?.category&&storedata?.category[0]?.name){
@@ -43,7 +43,18 @@ async function getproducts(){
     console.log(data?.data)
     setProducts(data?.data.products)
 }
-if(category){
+async function getsearchresults(){
+    const query = qs.parse(props.location.search, {
+        ignoreQueryPrefix: true
+      });
+    const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?search_text=${query}`)
+    console.log(data?.data)
+    setProducts(data?.data.products)
+}
+if(category==='searchresults'){
+getsearchresults()
+}
+else if(category){
 getproducts()
 }
     },[category])
@@ -82,6 +93,8 @@ const handleclearcart=()=>{
 </div>
 </div>
 <div className='categories'>
+<button className={category==='searchresults'?'category selected':'category'} onClick={()=>setCategory('searchresults')}>
+    SearchResults</button>
 {store?.category?.map((s)=><>
 <button className={category===s.name?'category selected':'category'} onClick={()=>setCategory(s.name)}>{s.name}</button></>)}
 </div>
