@@ -38,7 +38,10 @@ export const Storedetails=()=>{
        console.log(storedata)  
     },[id.id])
     useEffect(()=>{
-        if(storedata?.category&&storedata?.category[0]?.name){
+        if(query.search_text){
+            setCategory('searchresults')
+            }
+        else(storedata?.category&&storedata?.category[0]?.name){
             setCategory(storedata?.category[0]?.name)
             }
     },[storedata])
