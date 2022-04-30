@@ -28,6 +28,7 @@ export const Storedetails=()=>{
     const query = qs.parse(window.location.search, {
         ignoreQueryPrefix: true
       });
+      console.log(query)
     const id=useParams()
     
     console.log(id)
@@ -47,6 +48,7 @@ async function getproducts(){
     setProducts(data?.data.products)
 }
 async function getsearchresults(){
+    console.log(query)
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?search_text=${query}`)
     console.log(data?.data)
     setProducts(data?.data.products)
