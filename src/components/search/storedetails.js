@@ -95,7 +95,7 @@ const handleclearcart=()=>{
 </div>
 </div>
 <div className='categories'>
-{query&&
+{query.search_text&&
 <button className={category==='searchresults'?'category selected':'category'} onClick={()=>setCategory('searchresults')}>
     SearchResults</button>}
 {store?.category?.map((s)=><>
