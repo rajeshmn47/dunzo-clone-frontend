@@ -47,12 +47,13 @@ export const Storedetails=()=>{
     },[storedata])
     useEffect(()=>{
 async function getproducts(){
+    setProducts(false)
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?category=${category}`)
     console.log(data?.data)
     setProducts(data?.data.products)
 }
 async function getsearchresults(){
-    setProducts([])
+    setProducts(false)
     console.log(query.search_text)
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?search_text=${query.search_text}`)
     console.log(data?.data)
