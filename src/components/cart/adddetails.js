@@ -37,7 +37,7 @@ navigate('/cart')
 <div style={{display:'flex',alignItems:'center',width:'60vw',marginTop:'9vh'}}>
 
 <Button type='submit' 
-style={{width:'65vw',borderRadius:'5px',height:'8vh', backgroundColor:'blue',color:'white'}}>
+style={{width:'65vw',borderRadius:'20px',height:'8vh', backgroundColor:'green',color:'white'}}>
     Register</Button>
 </div>
 </form>
