@@ -61,7 +61,7 @@ setStorey(data.data)
 <div className='pricebtn'>
     <h5>{p.price}</h5>
   
-<button className="smalladd">+ ADD</button>
+<button className="smallcad">+ ADD</button>
 </div>
 </div>}</>):null}
 </div></div></>):null}</div>
