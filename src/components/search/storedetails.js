@@ -48,7 +48,7 @@ async function getproducts(){
     setProducts(data?.data.products)
 }
 async function getsearchresults(){
-    console.log(query)
+    console.log(query.search_text)
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?search_text=${query.search_text}`)
     console.log(data?.data)
     setProducts(data?.data.products)
