@@ -24,7 +24,10 @@ export const Storedetails=()=>{
     console.log(storedata)
     const store=storedata
     const [category,setCategory]=useState()
-    const[products,setProducts]=useState()
+    const[products,setProducts]=useState()  
+    const query = qs.parse(window.location.search, {
+        ignoreQueryPrefix: true
+      });
     const id=useParams()
     
     console.log(id)
@@ -44,9 +47,6 @@ async function getproducts(){
     setProducts(data?.data.products)
 }
 async function getsearchresults(){
-    const query = qs.parse(props.location.search, {
-        ignoreQueryPrefix: true
-      });
     const data=await axios.get(`https://dunzobackend.herokuapp.com/store/getproducts/?search_text=${query}`)
     console.log(data?.data)
     setProducts(data?.data.products)
@@ -93,8 +93,9 @@ const handleclearcart=()=>{
 </div>
 </div>
 <div className='categories'>
+{query&&
 <button className={category==='searchresults'?'category selected':'category'} onClick={()=>setCategory('searchresults')}>
-    SearchResults</button>
+    SearchResults</button>}
 {store?.category?.map((s)=><>
 <button className={category===s.name?'category selected':'category'} onClick={()=>setCategory(s.name)}>{s.name}</button></>)}
 </div>
