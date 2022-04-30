@@ -55,6 +55,7 @@ async function getsearchresults(){
 }
 if(category==='searchresults'){
 getsearchresults()
+setCategory('searchresults')
 }
 else if(category){
 getproducts()
