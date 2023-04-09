@@ -1,36 +1,36 @@
-.footer{
-    background-color:#171E30;
-    padding: 4vh 4vw;
-    box-sizing: border-box;
+.footer {
+  background-color: #171e30;
+  padding: 4vh 4vw;
+  box-sizing: border-box;
 }
 
-.footer h5{
-color:#FFFFFF;
+.footer h5 {
+  color: #ffffff;
 }
-.footer p{
-    margin: 2vh 0vh;
-    color: #B7BAC3;
-    font-size: 12px;
+.footer p {
+  margin: 2vh 0vh;
+  color: #b7bac3;
+  font-size: 12px;
 }
-.borderfoot{
-    height: 2px;
-    background-color:#B7BAC3;
-    width:90vw;
-    margin:5vh 2vw;
+.borderfoot {
+  height: 2px;
+  background-color: #b7bac3;
+  width: 90vw;
+  margin: 5vh 2vw;
 }
-.dunzoabout h2{
-    color:#FFFFFF;
-    font-size: 20px;
-    margin: 2vh 0vw;
+.dunzoabout h2 {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 2vh 0vw;
 }
-.dunzoabout h5{
-    color:#FFFFFF;
-    font-size: 12px;
-    padding: 0.5vh 4vw;
-    padding-right: 4vw;
-    padding-left:0vw;
-    border-right: 1px solid #FFFFFF;
-    display: inline-block;
-    margin: 2vh 0vw;
-    margin-right: 3vw;
+.dunzoabout h5 {
+  color: #ffffff;
+  font-size: 12px;
+  padding: 0.5vh 4vw;
+  padding-right: 4vw;
+  padding-left: 0vw;
+  border-right: 1px solid #ffffff;
+  display: inline-block;
+  margin: 2vh 0vw;
+  margin-right: 3vw;
 }

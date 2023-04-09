@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from "axios";
 import {
   REGISTER_USER_SUCCESS,
   REGISTER_USER_REQUEST,
@@ -10,59 +10,55 @@ import {
   LOAD_USER_SUCCESS,
   LOAD_USER_REQUEST,
   LOAD_USER_FAIL,
-} from '../constants/cartConstants'
+  URL,
+} from "../constants/cartConstants";
 
 const headers = {
-  Accept: 'application/json',
-}
+  Accept: "application/json",
+};
 export const register = (myform) => async (dispatch) => {
   try {
-    console.log(myform)
-    dispatch({ type: REGISTER_USER_REQUEST })
-    const { data } = await axios.post(
-      'https://dunzobackend.herokuapp.com/auth/register',
-      { myform }
-    )
-    console.log(data)
-    localStorage.setItem('server_token', data.server_token)
-    dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user })
+    console.log(myform);
+    dispatch({ type: REGISTER_USER_REQUEST });
+    const { data } = await axios.post(`${URL}/auth/register`, { myform });
+    console.log(data);
+    localStorage.setItem("server_token", data.server_token);
+    dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
   } catch (error) {
-    console.log(error.response, 'asdfgh')
-    dispatch({ type: REGISTER_USER_FAIL, payload: error.response.data.message })
+    console.log(error.response, "asdfgh");
+    dispatch({
+      type: REGISTER_USER_FAIL,
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
 export const login = (myform) => async (dispatch) => {
   try {
-    console.log(myform)
-    dispatch({ type: LOGIN_REQUEST })
-    const { data } = await axios.post(
-      'https://dunzobackend.herokuapp.com/auth/login',
-      { myform }
-    )
-    console.log(data)
-    localStorage.setItem('server_token', data.server_token)
-    dispatch({ type: LOGIN_SUCCESS, payload: data.user })
+    console.log(myform);
+    dispatch({ type: LOGIN_REQUEST });
+    const { data } = await axios.post(`${URL}/auth/login`, { myform });
+    console.log(data);
+    localStorage.setItem("server_token", data.server_token);
+    dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (error) {
-    console.log(error.response, 'asdfgh')
-    dispatch({ type: LOGIN_FAIL, payload: error.response.data.message })
+    console.log(error.response, "asdfgh");
+    dispatch({ type: LOGIN_FAIL, payload: error.response.data.message });
   }
-}
+};
 
 export const loadUser = (user) => async (dispatch) => {
   try {
-    dispatch({ type: LOAD_USER_SUCCESS, payload:user})
-    }
-   catch (error) {
-    console.log(error)
+    dispatch({ type: LOAD_USER_SUCCESS, payload: user });
+  } catch (error) {
+    console.log(error);
   }
-}
+};
 
 export const logoutUser = (user) => async (dispatch) => {
   try {
-    dispatch({ type: LOGOUT_SUCCESS, payload:user})
-    }
-   catch (error) {
-    console.log(error)
+    dispatch({ type: LOGOUT_SUCCESS, payload: user });
+  } catch (error) {
+    console.log(error);
   }
-}
+};

@@ -9,6 +9,7 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {useNavigate} from 'react-router-dom'
+import { URL } from '../constants/cartConstants'
 
 export const Home=()=>{
     const[stores,setStores]=useState()
@@ -17,7 +18,7 @@ export const Home=()=>{
 const handleclick=async(value)=>{
     console.log(value)
     setOn(false)
-    const  data=await axios.get(`https://dunzobackend.herokuapp.com/store/getstores/${value}`)
+    const  data=await axios.get(`${URL}/store/getstores/${value}`)
     console.log(data.data.stores)
 setStores(data.data.stores)
 }

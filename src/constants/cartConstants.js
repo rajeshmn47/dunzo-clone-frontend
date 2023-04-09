@@ -61,3 +61,23 @@ export const DELETE_USER_RESET = "DELETE_USER_RESET";
 
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
+function geturl() {
+  var current = process.env.REACT_APP_API;
+  if (current == "local") {
+    return "http://localhost:9000";
+  } else {
+    return "https://dunzo-backend-production.up.railway.app";
+  }
+}
+
+function getfrontendurl() {
+  var current = process.env.REACT_APP_API;
+  if (current == "local") {
+    return "http://localhost:3000";
+  } else {
+    return "https://web-production-b36d.up.railway.app";
+  }
+}
+
+export const URL = geturl();
+export const FURL = getfrontendurl();
