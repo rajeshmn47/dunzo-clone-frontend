@@ -19,12 +19,12 @@ export const Product = ({ propss, open, setOpen }) => {
   console.log(propss);
   const p = propss;
   const handleAdd = (id) => {
-    console.log('being added')
+    console.log("being added");
     if (!storeinfo || storeinfo._id == storedata._id) {
       localStorage.setItem("storeinfo", JSON.stringify(storedata));
       dispatch(addItemsToCart(id, 1));
     } else {
-      console.log('running else')
+      console.log("running else");
       setOpen(true);
     }
   };

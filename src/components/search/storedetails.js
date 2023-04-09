@@ -159,7 +159,7 @@ export const Storedetails = () => {
         {products ? (
           products?.map((p) => (
             <>
-            <Product propss={p} open={open} setOpen={setOpen} />
+              <Product propss={p} open={open} setOpen={setOpen} />
             </>
           ))
         ) : (
@@ -176,7 +176,10 @@ export const Storedetails = () => {
       </div>
       <Minicart />
       <Drawer
-        style={{ height: "40vh",zIndex:'1000000000000000000000000000000000000000000000000' }}
+        style={{
+          height: "40vh",
+          zIndex: "1000000000000000000000000000000000000000000000000",
+        }}
         anchor="bottom"
         open={open}
         onClose={toggleDrawer(false)}

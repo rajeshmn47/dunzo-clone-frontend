@@ -16,9 +16,7 @@ export const Searc = () => {
   const [stores, setStores] = useState();
   useEffect(() => {
     async function getstores() {
-      const data = await axios.get(
-        `${URL}/store/getallstores`
-      );
+      const data = await axios.get(`${URL}/store/getallstores`);
       console.log(data);
       setStores(data.data.stores);
     }
@@ -31,9 +29,7 @@ export const Searc = () => {
     if (!(value === "")) {
       console.log(value);
       setSearchvalue(value);
-      const data = await axios.get(
-        `${URL}/store/search/?q=${value}`
-      );
+      const data = await axios.get(`${URL}/store/search/?q=${value}`);
       console.log(data.data);
       setStorey(data.data);
     }

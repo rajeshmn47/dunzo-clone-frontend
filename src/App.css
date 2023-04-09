@@ -20,6 +20,7 @@ body {
   top: 0;
   background-color: #ffffff;
   z-index: 22222222222222222222222222;
+  padding: 15px 0;
 }
 .child {
   display: flex;

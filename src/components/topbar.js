@@ -32,6 +32,7 @@ export const Topbar = () => {
               badgeContent={cartItems?.reduce((a, b) => a + b.quantity, 0)}
               color="error"
               onClick={() => navigate("/cart")}
+              style={{ marginRight: "5px" }}
             >
               <ShoppingCartOutlinedIcon />
             </Badge>
