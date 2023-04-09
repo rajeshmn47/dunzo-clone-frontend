@@ -19,6 +19,7 @@ export const Product = ({ propss, open, setOpen }) => {
   console.log(propss);
   const p = propss;
   const handleAdd = (id) => {
+    console.log('being added')
     if (!storeinfo || storeinfo._id === storedata._id) {
       localStorage.setItem("storeinfo", JSON.stringify(storedata));
       dispatch(addItemsToCart(id, 1));

@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 // import Confirmation from "./Confirmation";
 import { useNavigate } from "react-router-dom";
 import { deletecart } from "../../actions/cartAction";
+import { URL } from "../../constants/cartConstants";
 
 const Wrapper = styled.div`
   font-family: system-ui !important;
@@ -69,7 +70,7 @@ function Payment() {
     // console.log(Total);
     e.preventDefault();
 
-    const API_URL = `https://dunzobackend.herokuapp.com/payment/`;
+    const API_URL = `${URL}/payment/`;
     const orderUrl = `${API_URL}order/${Total}`;
     const response = await Axios.get(orderUrl);
     const { data } = response;
@@ -147,7 +148,7 @@ function Payment() {
 
     var config = {
       method: "patch",
-      url: `https://dunzobackend.herokuapp.com/payment/createorder/`,
+      url: `${URL}/payment/createorder/`,
       headers: {
         "Content-Type": "application/json",
       },
