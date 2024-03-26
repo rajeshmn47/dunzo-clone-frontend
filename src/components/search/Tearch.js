@@ -79,7 +79,10 @@ export const Searc = () => {
                   navigate(`/store/${k._id}?search_text=${searchvalue}`)
                 }
               >
-                <h5>{k.title}</h5>
+                <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
+                  <img src={k.img_url} alt="" width="40" />
+                  <h5 style={{marginLeft:"5px"}}>{k.title}</h5>
+                </div>
                 <div className="storeys">
                   {storey
                     ? storey?.products?.map((p) => (

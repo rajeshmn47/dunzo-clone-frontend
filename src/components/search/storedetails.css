@@ -10,6 +10,7 @@
   scroll-behavior: smooth;
   font-family: Gilroy, sans-serif;
 }
+
 .category {
   width: auto;
   height: 9.45vh;
@@ -22,14 +23,17 @@
   text-transform: uppercase;
   font-family: Gilroy, sans-serif;
 }
+
 .selected {
   border-bottom: 3px solid rgb(0, 192, 139);
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
+
 .categories::-webkit-scrollbar {
   display: none;
 }
+
 .categoryheader {
   font-weight: 600;
   background-color: rgb(243, 243, 245);
@@ -40,6 +44,7 @@
   font-size: 18px;
   font-family: Gilroy, sans-serif;
 }
+
 .products {
   display: flex;
   flex-direction: column;
@@ -52,6 +57,7 @@
   align-items: flex-start;
   margin-bottom: 5vh;
 }
+
 .add {
   border: none;
   outline: none;
@@ -65,6 +71,7 @@
   font-size: 16px;
   margin: 0vw 1vw;
 }
+
 .left {
   display: flex;
   align-items: flex-start;
@@ -75,18 +82,21 @@
   margin-left: 3vw;
   width: 100%;
 }
+
 .productdetails h5 {
   font-family: sans-serif;
   margin-bottom: 2vh;
   font-weight: 600;
   font-size: 14px;
 }
+
 .productdetails h6 {
   font-family: sans-serif;
   opacity: 0.5;
   margin-bottom: 2vh;
   font-size: 14px;
 }
+
 .smalladd {
   border: none;
   outline: none;
@@ -96,16 +106,20 @@
   font-weight: 700;
   font-family: sans-serif;
 }
+
 .smallcad {
   border: none;
   outline: none;
   background-color: #ffffff;
   color: rgb(0, 192, 139);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   font-family: sans-serif;
   border: 1px solid #cccccc;
+  border-radius: 15px;
+  padding: 3px;
 }
+
 .added {
   display: flex;
   width: 15vw;
@@ -117,9 +131,11 @@
   font-weight: 700;
   font-family: sans-serif;
 }
+
 .search {
   padding: 2vh 0vw;
 }
+
 .minicart {
   padding: 2vh 5vw;
   position: fixed;
@@ -150,17 +166,23 @@
   display: flex;
   padding: 1vmax;
 }
+
 .searched {
   margin: 2vh 5vw;
 }
+
 .storesearch {
-  margin: 0vh 5vw;
+  margin: 0vh 0vw;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
 }
+
 .storeys {
   display: flex;
   padding: 1vh 2vw;
   box-sizing: border-box;
 }
+
 .singleproduct {
   padding: 1vh 1vw;
   display: flex;
@@ -171,7 +193,7 @@
   align-items: center;
   height: 30vh;
   width: 45vw;
-  box-shadow: 1px 1px 1px 1px rgb(228, 227, 227);
+  box-shadow: 0 0 2.5px 2.5px rgba(170, 167, 167, 0.15);
   box-sizing: border-box;
 }
 
@@ -181,4 +203,8 @@
   align-items: center;
   width: 100%;
   padding: 3vh 2vw;
+}
+li span {
+  position: relative;
+  left: -10px;
 }

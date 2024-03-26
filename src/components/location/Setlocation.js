@@ -20,7 +20,7 @@ class Setlocation extends Component {
     console.log(e.target.value);
     axios({
       method: "get",
-      url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${e.target.value}.json`,
+      url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${e.target.value}.json?country=IN`,
       params: {
         access_token:
           "pk.eyJ1IjoicmFqZXNobW40NyIsImEiOiJjbDF4OXByczYwMHFqM2NtbTNkZG9rOGUyIn0.Sa9ZnUH-YOdekFPU80Cuqg",

@@ -13,15 +13,15 @@ export const Minicart = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            width: "30vw",
+            width: "35vw",
           }}
         >
           <ShoppingCartOutlinedIcon style={{ opacity: "0.5" }} />
           {cartItems && cartItems?.reduce((a, c) => a + c.quantity, 0)} Items
-          <li style={{ color: "rgb(0, 192, 139)" }}>
-            ₹
-            {cartItems &&
-              cartItems?.reduce((a, c) => a + c.price * c.quantity, 0)}
+          <li style={{ color: "rgb(0, 192, 139)", marginLeft: "2px", width: "50px" }}>
+            <span>₹
+              {cartItems &&
+                cartItems?.reduce((a, c) => a + c.price * c.quantity, 0)}</span>
           </li>
         </div>
         <div>
