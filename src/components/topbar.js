@@ -48,7 +48,7 @@ export const Topbar = ({ setLocation }) => {
           <TextField
             style={{
               width: "100%",
-              height: "5vh",
+              height: "50px",
               padding: "1vmax",
               position: "relative",
               marginBottom: "3vh",
@@ -57,7 +57,7 @@ export const Topbar = ({ setLocation }) => {
             placeholder="search for item or a store"
             onClick={() => navigate("/search")}
           />
-          <Search style={{ position: "absolute", top: "45%", right: "8%" }} />
+          <Search style={{ position: "absolute", top: "45px", right: "10px",fontWeight:"200" }} />
         </div>
       </div>
     </>
