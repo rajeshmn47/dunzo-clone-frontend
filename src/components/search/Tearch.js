@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import Minicart from "./minicart";
 import "./storedetails.css";
 import { URL } from "../../constants/cartConstants";
+import Topbar from "../topbar";
+import KeyboardBackspace from "@material-ui/icons/KeyboardBackspace";
 
 export const Searc = () => {
   const [change, setChange] = useState(false);
@@ -38,15 +40,18 @@ export const Searc = () => {
     <>
       <div className="search">
         {!loading ? (
-          <>
-            <TextField
-              style={{ width: "100%", height: "5vh", padding: "1vmax" }}
-              variant="outlined"
-              placeholder="search for item or a store"
-              onChange={(e) => handlechange(e.target.value)}
-            />
-            <Search style={{ position: "absolute", top: "55%", right: "9%" }} />
-          </>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+            <KeyboardBackspace onClick={() => navigate(-1)} />
+            <div style={{ position: "relative", width: "95%", height: "10vh" }}>
+              <TextField
+                style={{ width: "95%", height: "5vh", padding: "1vmax" }}
+                variant="outlined"
+                placeholder="search for item or a store"
+                onChange={(e) => handlechange(e.target.value)}
+              />
+              <Search style={{ position: "absolute", top: "45%", right: "9%" }} />
+            </div>
+          </div>
         ) : (
           <div
             style={{
@@ -67,37 +72,37 @@ export const Searc = () => {
       <div className="searchedproducts">
         {storey
           ? storey?.stars?.map((k) => (
-              <>
-                <div
-                  className="storesearch"
-                  onClick={() =>
-                    navigate(`/store/${k._id}?search_text=${searchvalue}`)
-                  }
-                >
-                  <h5>{k.title}</h5>
-                  <div className="storeys">
-                    {storey
-                      ? storey?.products?.map((p) => (
-                          <>
-                            {k?.category?.some((x) => x.name === p?.subcat) && (
-                              <div className="singleproduct">
-                                <img src={p.image} alt="" width="40" />
-                                <h5>{p.name}</h5>
-                                <h5>1KG</h5>
-                                <div className="pricebtn">
-                                  <h5>{p.price}</h5>
+            <>
+              <div
+                className="storesearch"
+                onClick={() =>
+                  navigate(`/store/${k._id}?search_text=${searchvalue}`)
+                }
+              >
+                <h5>{k.title}</h5>
+                <div className="storeys">
+                  {storey
+                    ? storey?.products?.map((p) => (
+                      <>
+                        {k?.category?.some((x) => x.name === p?.subcat) && (
+                          <div className="singleproduct">
+                            <img src={p.image} alt="" width="40" />
+                            <h5>{p.name}</h5>
+                            <h5>1KG</h5>
+                            <div className="pricebtn">
+                              <h5>{p.price}</h5>
 
-                                  <button className="smallcad">+ ADD</button>
-                                </div>
-                              </div>
-                            )}
-                          </>
-                        ))
-                      : null}
-                  </div>
+                              <button className="smallcad">+ ADD</button>
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ))
+                    : null}
                 </div>
-              </>
-            ))
+              </div>
+            </>
+          ))
           : null}
       </div>
       <Minicart />

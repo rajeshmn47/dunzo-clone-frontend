@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
 
-export const Topbar = () => {
+export const Topbar = ({ setLocation }) => {
   const { cartItems } = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   console.log(user);
@@ -22,9 +22,9 @@ export const Topbar = () => {
     <>
       <div className="navbarcontainer">
         <div className="navbar">
-          <div className="child" onClick={() => navigate("/set-location")}>
+          <div className="child" onClick={() => setLocation(true)}>
             <LocationOnIcon htmlColor="#00D290" />
-            {data ? <p>{data.area}</p> : "Set Location"}
+            {data ? <p>{data.area}</p> : <p>Set Location</p>}
             <ExpandMoreOutlinedIcon htmlColor="#00D290" />
           </div>
           <div className="child">
@@ -39,7 +39,7 @@ export const Topbar = () => {
             {user ? (
               <AccountBoxOutlinedIcon onClick={() => navigate("/profile")} />
             ) : (
-              <h5 onClick={() => navigate("/auth")}>Sign in</h5>
+              <p onClick={() => navigate("/auth")}>Sign in</p>
             )}
             <MoreVertIcon />
           </div>
@@ -57,7 +57,7 @@ export const Topbar = () => {
             placeholder="search for item or a store"
             onClick={() => navigate("/search")}
           />
-          <Search style={{ position: "absolute", top: "37%", right: "8%" }} />
+          <Search style={{ position: "absolute", top: "45%", right: "8%" }} />
         </div>
       </div>
     </>

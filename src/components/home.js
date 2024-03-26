@@ -10,10 +10,12 @@ import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { useNavigate } from "react-router-dom";
 import { URL } from "../constants/cartConstants";
+import Setlocation from "./location/Setlocation";
 
 export const Home = () => {
   const [stores, setStores] = useState();
   const [on, setOn] = useState(true);
+  const [location, setLocation] = useState(false);
   const navigate = useNavigate();
   const handleclick = async (value) => {
     console.log(value);
@@ -22,9 +24,9 @@ export const Home = () => {
     console.log(data.data.stores);
     setStores(data.data.stores);
   };
-  return (
-    <>
-      <Topbar />
+  return (<>
+    {!location ? <>
+      <Topbar setLocation={setLocation} />
       {on ? (
         <>
           <div className="imagebanner">
@@ -130,7 +132,7 @@ export const Home = () => {
       )}
 
       <Footer />
-    </>
+    </> : <Setlocation setLocation={setLocation} />}</>
   );
 };
 

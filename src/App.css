@@ -86,6 +86,7 @@ body {
 .search {
   height: 17vh;
   display: flex;
+  margin-top: 35px;
   padding: 4vh 5vw;
   position: relative;
   box-sizing: border-box;

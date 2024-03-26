@@ -63,6 +63,7 @@ class Setlocation extends Component {
   };
 
   render() {
+    const {setLocation}=this.props;
     return (
       <>
         {" "}
@@ -74,7 +75,7 @@ class Setlocation extends Component {
               alignItems: "center",
             }}
           >
-            <KeyboardBackspaceIcon />
+            <KeyboardBackspaceIcon onClick={()=>setLocation(false)}/>
             Add your Location
           </h5>
           <Autocomplete

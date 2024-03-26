@@ -20,6 +20,7 @@ import { URL } from "../../constants/cartConstants";
 
 export const Storedetails = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [user, setUser] = useState();
   const { storedata } = useSelector((state) => state.store);
   const [open, setOpen] = useState(false);
@@ -93,7 +94,7 @@ export const Storedetails = () => {
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <KeyboardBackspaceIcon />
+          <KeyboardBackspaceIcon onClick={()=>navigate(-1)}/>
           <img
             src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-7b2b540792556466133aea6e7c6ae513.png"
             alt=""
