@@ -64,7 +64,7 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 function geturl() {
   var current = process.env.REACT_APP_API;
   if (current == "local") {
-    return "https://dunzo-backend.onrender.com";
+    return "http://localhost:9000";
   } else {
     return "https://dunzo-backend.onrender.com";
   }

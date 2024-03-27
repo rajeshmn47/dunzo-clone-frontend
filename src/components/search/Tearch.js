@@ -16,6 +16,8 @@ export const Searc = () => {
   const navigate = useNavigate();
   const [storey, setStorey] = useState([]);
   const [stores, setStores] = useState();
+  const coOrdinates = JSON.parse(localStorage.getItem("Coordinates"));
+
   useEffect(() => {
     async function getstores() {
       const data = await axios.get(`${URL}/store/getallstores`);
@@ -26,14 +28,21 @@ export const Searc = () => {
   }, []);
 
   const handlechange = async (value) => {
-    console.log(value);
+    console.log(value, coOrdinates);
     setChange(true);
     if (!(value === "")) {
-      console.log(value);
+      console.log(value, coOrdinates?.lat, coOrdinates?.long);
       setSearchvalue(value);
-      const data = await axios.get(`${URL}/store/search/?q=${value}`);
-      console.log(data.data);
-      setStorey(data.data);
+      if (coOrdinates?.lat && coOrdinates?.long) {
+        const data = await axios.get(`${URL}/store/search/?q=${value}&lat=${coOrdinates?.lat}&long=${coOrdinates?.long}`);
+        console.log(data.data.storez);
+        setStorey(data.data);
+      }
+      else {
+        const data = await axios.get(`${URL}/store/search/?q=${value}`);
+        console.log(data.data.storez);
+        setStorey(data.data);
+      }
     }
   };
   return (
@@ -81,7 +90,10 @@ export const Searc = () => {
               >
                 <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
                   <img src={k.img_url} alt="" width="40" />
-                  <h5 style={{marginLeft:"5px"}}>{k.title}</h5>
+                  <div style={{ marginLeft: "10px" }}>
+                    <h5 style={{ marginBottom: '5px' }}>{k.title}</h5>
+                    <p style={{ fontWeight: "200", fontSize: "12px" }}>{parseFloat(k?.dis / 1000).toFixed(2)}{" "}KM</p>
+                  </div>
                 </div>
                 <div className="storeys">
                   {storey

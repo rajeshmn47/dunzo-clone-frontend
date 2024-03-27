@@ -59,7 +59,7 @@ export const Storedetails = () => {
       setProducts(false);
       console.log(query.search_text);
       const data = await axios.get(
-        `${URL}/store/getproducts/?search_text=${query.search_text}`
+        `${URL}/store/getproducts/?search_text=${query.search_text}&lon=12&lat=10`
       );
       console.log(data?.data);
       setProducts(data?.data.products);
@@ -72,7 +72,7 @@ export const Storedetails = () => {
     }
   }, [category]);
 
-  const addtocart = () => {};
+  const addtocart = () => { };
   const toggleDrawer = (open) => (event) => {
     setOpen(false);
   };
@@ -94,7 +94,7 @@ export const Storedetails = () => {
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <KeyboardBackspaceIcon onClick={()=>navigate(-1)}/>
+          <KeyboardBackspaceIcon onClick={() => navigate(-1)} />
           <img
             src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-7b2b540792556466133aea6e7c6ae513.png"
             alt=""
