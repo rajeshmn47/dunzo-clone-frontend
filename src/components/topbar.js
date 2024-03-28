@@ -32,9 +32,9 @@ export const Topbar = ({ setLocation }) => {
               badgeContent={cartItems?.reduce((a, b) => a + b.quantity, 0)}
               color="error"
               onClick={() => navigate("/cart")}
-              style={{ marginRight: "5px" }}
+              style={{ marginRight: "15px", fontSize: "14px" }}
             >
-              <ShoppingCartOutlinedIcon />
+              <ShoppingCartOutlinedIcon style={{ fontSize: "18px" }} />
             </Badge>
             {user ? (
               <AccountBoxOutlinedIcon onClick={() => navigate("/profile")} />
