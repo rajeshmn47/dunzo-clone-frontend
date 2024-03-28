@@ -57,7 +57,7 @@ export const Topbar = ({ setLocation }) => {
             placeholder="search for item or a store"
             onClick={() => navigate("/search")}
           />
-          <Search style={{ position: "absolute", top: "45px", right: "10px",fontWeight:"200" }} />
+          <Search style={{ position: "absolute", top: "0px", right: "20px", fontWeight: "200" }} />
         </div>
       </div>
     </>

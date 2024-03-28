@@ -168,7 +168,9 @@
 }
 
 .searched {
-  margin: 2vh 5vw;
+  margin: 2vh 10px;
+  margin-top: 30px;
+  margin-bottom: 5px;
 }
 
 .storesearch {

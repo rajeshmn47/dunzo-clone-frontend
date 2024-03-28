@@ -4,68 +4,110 @@
   font-family: Gilroy, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
 body {
   font-family: Gilroy, sans-serif;
   -webkit-font-smoothing: antialiased;
   width: 100vw;
 }
+
 .navbar {
   display: flex;
   align-items: center;
-  width: 100%;
   justify-content: space-between;
-  padding: 1vmax;
+  padding: 10px 0;
+  width: calc(100% - 240px);
   box-sizing: border-box;
   position: fixed;
   top: 0;
   background-color: #ffffff;
   z-index: 22222222222222222222222222;
   padding: 15px 0;
+
+  @media only screen and (max-width: 600px) {
+    width: calc(100% - 16px);
+  }
 }
+
 .child {
   display: flex;
   align-items: center;
   width: auto;
-  min-width: 35%;
   justify-content: space-evenly;
+
+  @media only screen and (max-width: 600px) {
+    min-width: 10%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 45%;
+  }
 }
 
 .navbarcontainer {
+  padding: 15px 120px;
   padding-bottom: 2vh;
   margin-top: 5vh;
+  border-bottom: 1px solid #dddddd;
+
+  @media only screen and (max-width: 600px) {
+    padding: 15px 8px;
+  }
 }
+
 .imagebanner {
-  padding: 5vmax;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
 }
+
 .imagebanner img {
   border-radius: 1vw;
 }
+
 .homeimages {
   display: flex;
-  padding: 2vmax;
+  padding: 20px 0;
   justify-content: center;
   flex-wrap: wrap;
+  margin-left: -16px;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: -8px;
+    padding: 10px 5px;
+  }
 }
+
 .belowhomeimages {
-  padding: 2vmax;
+  padding: 20px 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+.belowhomeimages img {
+  @media only screen and (max-width: 600px) {}
+}
+
 .belowhomeimages div {
   background-color: #ffffff;
   box-shadow: rgb(0 0 0 / 6%) 0px 4px 7px;
   border: 2px solid #dddddd;
-  width: 20vw;
+  width: 20%;
   height: 20vh;
-  margin: 1vh 1vw;
+  margin: 0;
   display: flex;
   align-items: center;
   border-radius: 2px;
   justify-content: center;
   flex-direction: column;
   font-size: 14px;
+
+  @media only screen and (max-width: 600px) {
+    width: 48%;
+    margin-bottom: 10px;
+  }
 }
 
 .stores {
@@ -73,6 +115,7 @@ body {
   overflow: auto;
   padding: 3vh 3vw;
 }
+
 .store {
   margin-right: 3vw;
   display: flex;
@@ -83,16 +126,17 @@ body {
   width: 33%;
   height: 20%;
 }
+
 .search {
-  height: 120px;
+  height: 30px;
   display: flex;
-  margin-top: 35px;
-  padding: 4vh 5vw;
   position: relative;
   box-sizing: border-box;
   align-items: center;
-  border-bottom: 1px solid #dddddd;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
+
 .store img {
   width: 100%;
   border: 1px solid #dddddd;
@@ -103,6 +147,7 @@ body {
 .homeimages img {
   margin: 1vh 1vw;
 }
+
 .progress {
   width: 100%;
   height: 100%;
@@ -110,6 +155,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .stardusts {
   padding: 1vh 2vw;
 }
@@ -123,6 +169,7 @@ body {
   width: 100%;
   height: 20%;
 }
+
 .stardust div {
   height: 100%;
   margin-right: 5vw;
@@ -131,6 +178,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
 }
+
 .stardust div h5 {
   margin-top: 1vh;
 }
@@ -143,6 +191,7 @@ body {
   border: 1px solid #ffffff;
   padding: 1vh 1vw;
 }
+
 .aadhaar {
   background-color: #f5fbff;
   width: 95vw;
@@ -150,15 +199,18 @@ body {
   padding: 2vh 2vw;
   box-sizing: border-box;
 }
+
 .aadhaar h5 {
   color: #0b5e9d;
   margin-bottom: 1vh;
   font-size: 13px;
 }
+
 .aadhaar h6 {
   color: #0b5e9d;
   font-size: 12px;
 }
+
 .profilediv {
   margin: 1vh 1vw;
   display: flex;
@@ -166,10 +218,12 @@ body {
   align-items: center;
   box-sizing: border-box;
 }
+
 .profiledivgap {
   background-color: #f3f3f5;
   height: 2vh;
 }
+
 .edit {
   background-color: #ffffff;
   border: none;
@@ -180,12 +234,14 @@ body {
   color: #00b37a;
   font-weight: 600;
 }
+
 .profiletop {
   display: flex;
   margin: 1vh 4vw;
   justify-content: space-between;
   align-items: flex-start;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -193,4 +249,12 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+.screenbody {
+  padding: 0 130px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0 15px;
+  }
 }
