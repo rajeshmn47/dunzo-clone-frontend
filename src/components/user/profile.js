@@ -11,8 +11,16 @@ import MyLocationIcon from "@material-ui/icons/MyLocation";
 import PaymentIcon from "@material-ui/icons/Payment";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailIcon from "@material-ui/icons/Mail";
+import { signOut } from "firebase/auth";
 
 export const Profile = () => {
+  const handleSignOut = () => {
+    auth.signOut().then(() => {
+      console.log(' Sign-out successful')
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
   return (
     <>
       <div
@@ -139,7 +147,7 @@ export const Profile = () => {
         <ChevronRightOutlinedIcon />
       </div>
       <div className="profilediv">
-        <button onClick={() => auth.signOut()} className="logoutbtn">
+        <button onClick={() => handleSignOut()} className="logoutbtn">
           <ExitToAppOutlinedIcon
             htmlColor="#6F7588"
             style={{ marginRight: "2vw" }}

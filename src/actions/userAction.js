@@ -49,6 +49,7 @@ export const login = (myform) => async (dispatch) => {
 
 export const loadUser = (user) => async (dispatch) => {
   try {
+    console.log('loading user',user)
     dispatch({ type: LOAD_USER_SUCCESS, payload: user });
   } catch (error) {
     console.log(error);

@@ -5,11 +5,13 @@ import {
   signInWithPhoneNumber,
   RecaptchaVerifier,
 } from "firebase/auth";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Otpauth = () => {
   // Inputs
   const [mynumber, setnumber] = useState("");
   const auth = getAuth();
+  const navigate = useNavigate();
   const [otp, setotp] = useState("");
   const [show, setshow] = useState(false);
   const [final, setfinal] = useState("");
@@ -33,7 +35,8 @@ const Otpauth = () => {
     if (mynumber === "" || mynumber.length < 10) return;
 
     const verify = window.recaptchaVerifier;
-    signInWithPhoneNumber(auth, mynumber, verify)
+    let num = `+91${mynumber}`
+    signInWithPhoneNumber(auth, num, verify)
       .then((result) => {
         setfinal(result);
         alert("code sent");
@@ -52,6 +55,7 @@ const Otpauth = () => {
       .confirm(otp)
       .then((result) => {
         alert("successfully logged in");
+        navigate('/')
         console.log(result);
       })
       .catch((err) => {
@@ -68,12 +72,13 @@ const Otpauth = () => {
             onChange={(e) => {
               setnumber(e.target.value);
             }}
-            placeholder="phone number"
+            placeholder="enter 10 digit phone number"
+            style={{ padding: "5px 5px" }}
           />
           <br />
           <br />
           <div id="recaptcha-container"></div>
-          <button onClick={signin}>Send OTP</button>
+          <button onClick={signin} style={{ padding: "5px" }}>Send OTP</button>
         </div>
         <div style={{ display: show ? "block" : "none" }}>
           <input
@@ -82,10 +87,11 @@ const Otpauth = () => {
             onChange={(e) => {
               setotp(e.target.value);
             }}
+            style={{ padding: "5px" }}
           ></input>
           <br />
           <br />
-          <button id="sign-in-button" onClick={ValidateOtp}>
+          <button id="sign-in-button" onClick={ValidateOtp} style={{ padding: "5px" }}>
             Verify
           </button>
         </div>

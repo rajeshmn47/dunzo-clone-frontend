@@ -5,15 +5,16 @@ import { useState, useEffect } from "react";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import { TextField, Badge } from "@material-ui/core";
-import { Search } from "@material-ui/icons";
+import { AccountCircleOutlined, Search } from "@material-ui/icons";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
 export const Topbar = ({ setLocation }) => {
   const { cartItems } = useSelector((state) => state.cart);
-  const user = useSelector((state) => state.user);
-  console.log(user);
+  const { user } = useSelector((state) => state.user);
+  console.log(user, 'useselector');
   console.log(cartItems);
   const navigate = useNavigate();
   const data = JSON.parse(localStorage.getItem("Coordinates"));
@@ -37,7 +38,7 @@ export const Topbar = ({ setLocation }) => {
               <ShoppingCartOutlinedIcon style={{ fontSize: "18px" }} />
             </Badge>
             {user ? (
-              <AccountBoxOutlinedIcon onClick={() => navigate("/profile")} />
+              <AccountCircleOutlined onClick={() => navigate("/profile")} style={{ margin: "0 5px" }} />
             ) : (
               <p onClick={() => navigate("/auth")}>Sign in</p>
             )}

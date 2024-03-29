@@ -25,8 +25,7 @@ function App() {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         console.log(authUser, "ok good bro");
-
-        dispatch(loadUser(authUser));
+        dispatch(loadUser(authUser?.multiFactor?.user));
       } else {
         dispatch(logoutUser());
       }
