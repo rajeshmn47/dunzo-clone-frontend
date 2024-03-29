@@ -70,10 +70,6 @@ body {
   border-radius: 5px;
 }
 
-.homeimages img {
-  border-radius: 5px;
-}
-
 .homeimages {
   display: flex;
   padding: 20px 0;
