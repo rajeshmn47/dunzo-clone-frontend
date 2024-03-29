@@ -17,13 +17,21 @@ export const Home = () => {
   const [stores, setStores] = useState();
   const [on, setOn] = useState(true);
   const [location, setLocation] = useState(false);
+  const coOrdinates = JSON.parse(localStorage.getItem("Coordinates"));
   const navigate = useNavigate();
   const handleclick = async (value) => {
     console.log(value);
     setOn(false);
-    const data = await axios.get(`${URL}/store/getstores/${value}`);
-    console.log(data.data.stores);
-    setStores(data.data.stores);
+    if (coOrdinates?.lat && coOrdinates?.long) {
+      const data = await axios.get(`${URL}/store/getstores/${value}?lat=${coOrdinates?.lat}&long=${coOrdinates?.long}`);
+      console.log(data.data.stores);
+      setStores(data.data.stores);
+    }
+    else {
+      const data = await axios.get(`${URL}/store/getstores/${value}`);
+      console.log(data.data.stores);
+      setStores(data.data.stores);
+    }
   };
   return (<>
     {!location ? <>
@@ -127,9 +135,7 @@ export const Home = () => {
                     <div>
                       <h5>{s.title}</h5>
                       <h5>{s.location}</h5>
-                      <h5>
-                        13.1 km <span className="spanish">34 mins</span>
-                      </h5>
+                      <h5>{parseFloat(s?.dis / 1000).toFixed(2)} kM <span className="spanish">34 mins</span></h5>
                     </div>
                   </div>
                 </>

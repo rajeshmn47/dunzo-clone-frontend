@@ -76,7 +76,7 @@ export const Searc = () => {
         )}
       </div>
       <div className="searched">
-        {searchvalue ? <h5>search results for {searchvalue}</h5> : null}
+        {searchvalue ? <p style={{ fontSize: "14px", marginBottom: "10px",fontWeight:"600",textTransform:"capitalize" }}>search results for "{searchvalue}"</p> : null}
       </div>
       <div className="searchedproducts">
         {storey
