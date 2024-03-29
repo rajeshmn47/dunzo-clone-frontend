@@ -8,7 +8,7 @@
 body {
   font-family: Gilroy, sans-serif;
   -webkit-font-smoothing: antialiased;
-  width: 100vw;
+  
 }
 
 .navbar {
@@ -71,7 +71,6 @@ body {
   padding: 20px 0;
   justify-content: center;
   flex-wrap: wrap;
-  margin-left: -16px;
 
   @media only screen and (max-width: 600px) {
     margin-left: -8px;
@@ -142,10 +141,6 @@ body {
   border: 1px solid #dddddd;
   margin-bottom: 1vh;
   border-radius: 1vh;
-}
-
-.homeimages img {
-  margin: 1vh 1vw;
 }
 
 .progress {
